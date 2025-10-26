@@ -1,5 +1,6 @@
 package net.agent.agentmod;
 
+import net.agent.agentmod.block.ModBlocks;
 import net.agent.agentmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -14,5 +15,6 @@ public class Agentmod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
