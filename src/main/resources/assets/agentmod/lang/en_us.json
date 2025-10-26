@@ -1,4 +1,7 @@
 {
   "item.agentmod.pink_garnet" : "Pink Garnet",
-  "item.agentmod.raw_pink_garnet" : "Raw Pink Garnet"
+  "item.agentmod.raw_pink_garnet" : "Raw Pink Garnet",
+
+  "itemgroup.agentmod.tutorial_items" : "Tutorial Items",
+  "itemgroup.agentmod.world_edit_items" : "World Edit Items"
 }
