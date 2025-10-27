@@ -28,7 +28,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(Items.COMMAND_BLOCK))
                     .displayName(Text.translatable("itemgroup.agentmod.world_edit_items"))
                     .entries((displayContext, entries) -> {
-                        entries.add(Items.COMMAND_BLOCK);
+                        entries.add(ModItems.CRACK_ITEM);
                     })
                     .build());
 
