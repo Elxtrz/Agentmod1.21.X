@@ -71,6 +71,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.agentmod.weapon_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.PINK_GARNET_HAMMER);
+                        entries.add(ModItems.BREEZE_SWORD);
                     })
                     .build());
 
