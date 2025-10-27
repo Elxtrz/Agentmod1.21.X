@@ -1,6 +1,7 @@
 package net.agent.agentmod.item;
 
 import net.agent.agentmod.Agentmod;
+import net.agent.agentmod.block.custom.HammerItem;
 import net.agent.agentmod.item.custom.CrackItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
@@ -54,6 +55,10 @@ public class ModItems{
     public static final Item PINK_GARNET_HOE = registerItem("pink_garnet_hoe",
             new HoeItem(ModToolMaterials.PINK_GARNET, new Item.Settings()
                     .attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 0, -3f))));
+
+    public static final Item PINK_GARNET_HAMMER = registerItem("pink_garnet_hammer",
+            new HammerItem(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 7, -3.4f))));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name), item);

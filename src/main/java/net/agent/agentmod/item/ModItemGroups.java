@@ -67,10 +67,10 @@ public class ModItemGroups {
 
     public static final ItemGroup WEAPONS = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Agentmod.MOD_ID, "weapon_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET_SWORD))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET_HAMMER))
                     .displayName(Text.translatable("itemgroup.agentmod.weapon_items"))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModItems.PINK_GARNET_SWORD);
+                        entries.add(ModItems.PINK_GARNET_HAMMER);
                     })
                     .build());
 

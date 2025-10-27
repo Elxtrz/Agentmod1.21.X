@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "agentmod:item/pink_garnet_hammer"
+  }
+}
