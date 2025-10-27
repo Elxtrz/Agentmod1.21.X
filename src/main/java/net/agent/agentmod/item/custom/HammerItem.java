@@ -1,4 +1,4 @@
-package net.agent.agentmod.block.custom;
+package net.agent.agentmod.item.custom;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

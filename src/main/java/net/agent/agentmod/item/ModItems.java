@@ -1,7 +1,7 @@
 package net.agent.agentmod.item;
 
 import net.agent.agentmod.Agentmod;
-import net.agent.agentmod.block.custom.HammerItem;
+import net.agent.agentmod.item.custom.HammerItem;
 import net.agent.agentmod.item.custom.CrackItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;

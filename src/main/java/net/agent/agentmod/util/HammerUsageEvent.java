@@ -1,6 +1,6 @@
 package net.agent.agentmod.util;
 
-import net.agent.agentmod.block.custom.HammerItem;
+import net.agent.agentmod.item.custom.HammerItem;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
