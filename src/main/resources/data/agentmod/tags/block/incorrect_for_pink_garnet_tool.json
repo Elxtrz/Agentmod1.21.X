@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#minecraft:incorrect_for_iron_tool"
+  ],
+  "remove":[
+    "#agentmod:needs_pink_garnet_tool"
+  ]
+
+}

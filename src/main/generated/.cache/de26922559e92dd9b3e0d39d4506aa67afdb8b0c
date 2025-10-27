@@ -1,3 +1,4 @@
-// 1.21	2025-10-26T22:18:41.9709355	agentmod/Tags for minecraft:block
+// 1.21	2025-10-26T23:14:52.5101097	agentmod/Tags for minecraft:block
+1b98643a7087dd75193d17dcfe5d4e28802bca78 data\agentmod\tags\block\needs_pink_garnet_tools.json
 3fe16aff4d9c9f1e4e167f6d198d7df375edb678 data\minecraft\tags\block\mineable\pickaxe.json
 d77f0e31a7562e77884f31b5094e689461072189 data\minecraft\tags\block\needs_iron_tool.json

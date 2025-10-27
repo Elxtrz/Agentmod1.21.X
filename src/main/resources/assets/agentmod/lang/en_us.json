@@ -7,13 +7,22 @@
 
   "block.agentmod.magic_block": "§9MAGIC§r Block",
 
-  "block.tutorialmod.pink_garnet_block": "Block of Pink Garnet",
-  "block.tutorialmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
-  "block.tutorialmod.pink_garnet_ore": "Pink Garnet Ore",
-  "block.tutorialmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
+  "block.agentmod.pink_garnet_block": "Block of Pink Garnet",
+  "block.agentmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
+  "block.agentmod.pink_garnet_ore": "Pink Garnet Ore",
+  "block.agentmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
+
+  "item.agentmod.pink_garnet_sword": "Pink Garnet Sword",
+  "item.agentmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
+  "item.agentmod.pink_garnet_shovel": "Pink Garnet Shovel",
+  "item.agentmod.pink_garnet_axe": "Pink Garnet Axe",
+  "item.agentmod.pink_garnet_hoe": "Pink Garnet Hoe",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",
+  "itemgroup.agentmod.enchant_items" : "Enchant Items",
+  "itemgroup.agentmod.potion_items" : "Potion Items",
+  "itemgroup.agentmod.weapon_items" : "Weapon Items",
 
-  "tooltip.agentmod.super_cauliflower.tooltip" : "Super????"
+  "item.agentmod.super_cauliflower.tooltip" : "Super????"
 }

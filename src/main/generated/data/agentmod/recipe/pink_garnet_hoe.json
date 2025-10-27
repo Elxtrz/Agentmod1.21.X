@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": {
+      "item": "agentmod:pink_garnet"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "PP ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "agentmod:pink_garnet_hoe"
+  }
+}

@@ -1,5 +1,6 @@
 package net.agent.agentmod.datagen;
 
+import net.agent.agentmod.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.agent.agentmod.block.ModBlocks;
@@ -23,6 +24,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MAGIC_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+
+        getOrCreateTagBuilder(ModTags.Blocks.NEEDS_PINK_GARNET_TOOLS)
+                .addTag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.PINK_GARNET_ORE)
                 .add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
     }
 }

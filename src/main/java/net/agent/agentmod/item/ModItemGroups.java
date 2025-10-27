@@ -29,15 +29,48 @@ public class ModItemGroups {
 
                         entries.add(ModItems.SUPER_CAULIFLOWER);
                         entries.add(ModItems.STARLIGHT_ASHES);
+
+                        entries.add(ModItems.PINK_GARNET_HOE);
+                        entries.add(ModItems.PINK_GARNET_AXE);
+                        entries.add(ModItems.PINK_GARNET_PICKAXE);
+                        entries.add(ModItems.PINK_GARNET_SWORD);
+                        entries.add(ModItems.PINK_GARNET_SHOVEL);
                     })
                     .build());
 
     public static final ItemGroup WORLD_EDIT_ITEMS = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Agentmod.MOD_ID, "world_edit_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(Items.COMMAND_BLOCK))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.CRACK_WAND))
                     .displayName(Text.translatable("itemgroup.agentmod.world_edit_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.CRACK_WAND);
+                    })
+                    .build());
+
+    public static final ItemGroup ENCHANTS = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Agentmod.MOD_ID, "enchant_items"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(Items.ENCHANTED_BOOK))
+                    .displayName(Text.translatable("itemgroup.agentmod.enchant_items"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(Items.ENCHANTED_BOOK);
+                    })
+                    .build());
+
+    public static final ItemGroup POTIONS = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Agentmod.MOD_ID, "potion_items"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(Items.POTION))
+                    .displayName(Text.translatable("itemgroup.agentmod.potion_items"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(Items.POTION);
+                    })
+                    .build());
+
+    public static final ItemGroup WEAPONS = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Agentmod.MOD_ID, "weapon_items"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET_SWORD))
+                    .displayName(Text.translatable("itemgroup.agentmod.weapon_items"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.PINK_GARNET_SWORD);
                     })
                     .build());
 
