@@ -20,6 +20,8 @@ public class ModItemGroups {
                         entries.add(ModItems.PINK_GARNET);
                         entries.add(ModItems.RAW_PINK_GARNET);
                         entries.add(ModBlocks.TEST_BLOCK);
+
+                        entries.add(ModBlocks.MAGIC_BLOCK);
                     })
                     .build());
 
@@ -28,7 +30,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(Items.COMMAND_BLOCK))
                     .displayName(Text.translatable("itemgroup.agentmod.world_edit_items"))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModItems.CRACK_ITEM);
+                        entries.add(ModItems.CRACK_WAND);
                     })
                     .build());
 

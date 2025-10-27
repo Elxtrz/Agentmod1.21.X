@@ -4,7 +4,6 @@ import net.agent.agentmod.Agentmod;
 import net.agent.agentmod.item.custom.CrackItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -18,7 +17,7 @@ public class ModItems{
     public static final Item RAW_PINK_GARNET = registerItem("raw_pink_garnet",
             new Item(new Item.Settings()));
 
-    public static final Item CRACK_ITEM = registerItem("crack_item",
+    public static final Item CRACK_WAND = registerItem("crack_wand",
             new CrackItem(new Item.Settings().maxDamage(100).maxCount(1)));
 
     private static Item registerItem(String name, Item item){

@@ -1,6 +1,9 @@
 {
   "item.agentmod.pink_garnet" : "Pink Garnet",
   "item.agentmod.raw_pink_garnet" : "Raw Pink Garnet",
+  "item.agentmod.crack_wand" : "Crack Wand",
+
+  "block.agentmod.magic_block" : "Magic Block",
 
   "itemgroup.agentmod.tutorial_items" : "Tutorial Items",
   "itemgroup.agentmod.world_edit_items" : "World Edit Items"
