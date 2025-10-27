@@ -5,7 +5,12 @@
   "item.agentmod.super_cauliflower": "Super Cauliflower",
   "item.agentmod.starlight_ashes": "Starlight Ashes",
 
-  "block.agentmod.magic_block": "Magic Block",
+  "block.agentmod.magic_block": "§9MAGIC§r Block",
+
+  "block.tutorialmod.pink_garnet_block": "Block of Pink Garnet",
+  "block.tutorialmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
+  "block.tutorialmod.pink_garnet_ore": "Pink Garnet Ore",
+  "block.tutorialmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",

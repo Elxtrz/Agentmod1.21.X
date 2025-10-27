@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "agentmod:block/magic_block"
+    }
+  }
+}
