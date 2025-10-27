@@ -1,0 +1,14 @@
+{
+  "type" : "minecraft:crafting_shapeless",
+  "category" : "misc",
+  "ingredients" : [
+    {
+        "item" : "agentmod:pink_garnet"
+    }
+  ],
+  "result" : {
+    "count" : 1,
+    "id" : "minecraft:diamond_block"
+  }
+
+}
