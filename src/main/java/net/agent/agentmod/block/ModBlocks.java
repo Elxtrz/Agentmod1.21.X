@@ -17,9 +17,6 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
 
-    public static final Block TEST_BLOCK = registerBlock("test_block",
-            new Block(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
-
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             new MagicBlock(AbstractBlock.Settings.create().strength(5f).requiresTool().sounds(BlockSoundGroup.GLASS)));
 
@@ -53,7 +50,7 @@ public class ModBlocks {
         Agentmod.LOGGER.info("Registering ModBlocks for " + Agentmod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(TEST_BLOCK);
+            entries.add(RAW_PINK_GARNET_BLOCK);
         });
     }
 }
