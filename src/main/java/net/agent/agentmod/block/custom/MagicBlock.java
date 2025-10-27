@@ -1,6 +1,7 @@
 package net.agent.agentmod.block.custom;
 
 import net.agent.agentmod.item.ModItems;
+import net.agent.agentmod.util.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -29,12 +30,19 @@ public class MagicBlock extends Block{
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+
         if(entity instanceof ItemEntity itemEntity){
-            if(itemEntity.getStack().getItem() == ModItems.RAW_PINK_GARNET) {
+//            if(itemEntity.getStack().getItem() == ModItems.RAW_PINK_GARNET) {
+//                itemEntity.setStack(new ItemStack(Items.DIAMOND, itemEntity.getStack().getCount()));
+//            }
+            if(isValidItem(itemEntity.getStack())) {
                 itemEntity.setStack(new ItemStack(Items.DIAMOND, itemEntity.getStack().getCount()));
             }
         }
-
         super.onSteppedOn(world, pos, state, entity);
+    }
+
+    private boolean isValidItem(ItemStack stack) {
+        return stack.isIn(ModTags.Items.TRANSFORMABLE_ITEMS);
     }
 }
