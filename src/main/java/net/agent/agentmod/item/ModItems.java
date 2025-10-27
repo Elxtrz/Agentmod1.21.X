@@ -5,9 +5,14 @@ import net.agent.agentmod.item.custom.CrackItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import java.util.List;
 
 public class ModItems{
 
@@ -21,7 +26,13 @@ public class ModItems{
             new CrackItem(new Item.Settings().maxDamage(100).maxCount(1)));
 
     public static final Item SUPER_CAULIFLOWER = registerItem("super_cauliflower",
-            new Item(new Item.Settings().food(ModFoodComponents.SUPER_CAULIFLOWER)));
+            new Item(new Item.Settings().food(ModFoodComponents.SUPER_CAULIFLOWER)) {
+                @Override
+                public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+                    tooltip.add(Text.translatable("item.agentmod.super_cauliflower.tooltip"));
+                    super.appendTooltip(stack, context, tooltip, type);
+                }
+            });
 
     public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes",
             new Item(new Item.Settings()));

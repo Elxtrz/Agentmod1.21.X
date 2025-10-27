@@ -8,5 +8,7 @@
   "block.agentmod.magic_block": "Magic Block",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
-  "itemgroup.agentmod.world_edit_items": "World Edit Items"
+  "itemgroup.agentmod.world_edit_items": "World Edit Items",
+
+  "tooltip.agentmod.super_cauliflower.tooltip" : "Super????"
 }
