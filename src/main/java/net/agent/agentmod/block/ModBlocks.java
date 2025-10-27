@@ -1,6 +1,6 @@
 package net.agent.agentmod.block;
 
-import net.agent.agentmod.Agentmod;
+import net.agent.agentmod.AgentMod;
 import net.agent.agentmod.block.custom.MagicBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -23,16 +23,16 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(Agentmod.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(AgentMod.MOD_ID, name), block);
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID , name),
+        Registry.register(Registries.ITEM, Identifier.of(AgentMod.MOD_ID , name),
                 new BlockItem(block, new Item.Settings()));
     }
 
     public static void registerModBlocks(){
-        Agentmod.LOGGER.info("Registering ModBlocks for " + Agentmod.MOD_ID);
+        AgentMod.LOGGER.info("Registering ModBlocks for " + AgentMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(TEST_BLOCK);

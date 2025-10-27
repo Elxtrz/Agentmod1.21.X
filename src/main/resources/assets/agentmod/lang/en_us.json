@@ -1,10 +1,12 @@
 {
-  "item.agentmod.pink_garnet" : "Pink Garnet",
-  "item.agentmod.raw_pink_garnet" : "Raw Pink Garnet",
-  "item.agentmod.crack_wand" : "Crack Wand",
+  "item.agentmod.pink_garnet": "Pink Garnet",
+  "item.agentmod.raw_pink_garnet": "Raw Pink Garnet",
+  "item.agentmod.crack_wand": "Crack Wand",
+  "item.agentmod.super_cauliflower": "Super Cauliflower",
+  "item.agentmod.starlight_ashes": "Starlight Ashes",
 
-  "block.agentmod.magic_block" : "Magic Block",
+  "block.agentmod.magic_block": "Magic Block",
 
-  "itemgroup.agentmod.tutorial_items" : "Tutorial Items",
-  "itemgroup.agentmod.world_edit_items" : "World Edit Items"
+  "itemgroup.agentmod.tutorial_items": "Tutorial Items",
+  "itemgroup.agentmod.world_edit_items": "World Edit Items"
 }
