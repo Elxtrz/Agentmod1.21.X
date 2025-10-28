@@ -26,5 +26,7 @@
   "itemgroup.agentmod.potion_items" : "Potion Items",
   "itemgroup.agentmod.weapon_items" : "Weapon Items",
 
+  "effect.agentmod.slimey": "Slimey",
+
   "item.agentmod.super_cauliflower.tooltip" : "Super????"
 }

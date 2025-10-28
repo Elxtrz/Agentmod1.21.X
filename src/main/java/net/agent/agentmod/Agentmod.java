@@ -1,6 +1,7 @@
 package net.agent.agentmod;
 
 import net.agent.agentmod.block.ModBlocks;
+import net.agent.agentmod.effect.ModEffects;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
 import net.agent.agentmod.util.HammerUsageEvent;
@@ -36,7 +37,7 @@ public class Agentmod implements ModInitializer {
 		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 
 		AttackEntityCallback.EVENT.register((playerEntity, world, hand, entity, entityHitResult) -> {
-			if(entity instanceof CowEntity || entity instanceof SheepEntity){
+			if((entity instanceof CowEntity || entity instanceof SheepEntity) && !world.isClient()){
 				if(playerEntity.getMainHandStack().getItem() == ModItems.CRACK_WAND){
 					playerEntity.getMainHandStack().damage(1, playerEntity, EquipmentSlot.MAINHAND);
 					playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1));
@@ -47,5 +48,7 @@ public class Agentmod implements ModInitializer {
 
 			return ActionResult.FAIL;
 		});
+
+		ModEffects.registerEffects();
 	}
 }
