@@ -2,6 +2,7 @@ package net.agent.agentmod.item;
 
 import net.agent.agentmod.Agentmod;
 import net.agent.agentmod.block.ModBlocks;
+import net.agent.agentmod.potion.ModPotions;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -53,15 +54,6 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.agentmod.enchant_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(Items.ENCHANTED_BOOK);
-                    })
-                    .build());
-
-    public static final ItemGroup POTIONS = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(Agentmod.MOD_ID, "potion_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(Items.POTION))
-                    .displayName(Text.translatable("itemgroup.agentmod.potion_items"))
-                    .entries((displayContext, entries) -> {
-                        entries.add(Items.POTION);
                     })
                     .build());
 
