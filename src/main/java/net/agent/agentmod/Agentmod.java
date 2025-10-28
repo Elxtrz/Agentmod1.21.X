@@ -41,8 +41,8 @@ public class Agentmod implements ModInitializer {
 					playerEntity.getMainHandStack().damage(1, playerEntity, EquipmentSlot.MAINHAND);
 					playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1));
 					playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 100, 1));
-					return ActionResult.SUCCESS;
 				}
+				return ActionResult.SUCCESS;
 			}
 
 			return ActionResult.FAIL;
