@@ -51,6 +51,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, Identifier.of(Agentmod.MOD_ID, "raw_pink_garnet_from_magic_block"));
 
 
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.PINK_GARNET_PICKAXE)
                 .pattern("PPP")
                 .pattern(" S ")
@@ -94,6 +95,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('P', ModItems.PINK_GARNET)
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                .offerTo(exporter);
+
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CRACK_WAND, 1)
+                .input(ModItems.PINK_GARNET)
+                .input(Items.NETHERITE_INGOT)
+                .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(Items.NETHERITE_INGOT))
                 .offerTo(exporter);
     }
 }

@@ -4,6 +4,7 @@ import net.agent.agentmod.block.ModBlocks;
 import net.agent.agentmod.effect.ModEffects;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
+import net.agent.agentmod.particles.ModParticles;
 import net.agent.agentmod.potion.ModPotions;
 import net.agent.agentmod.util.HammerUsageEvent;
 import net.agent.agentmod.util.ModTags;
@@ -57,9 +58,11 @@ public class Agentmod implements ModInitializer {
 		ModEffects.registerEffects();
 
 		ModPotions.registerPotions();
+		ModParticles.registerParticles();
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
+			builder.registerPotionRecipe(Potions.AWKWARD, ModItems.CRACK_WAND, ModPotions.BLEED_POTION);
 		});
 	}
 }

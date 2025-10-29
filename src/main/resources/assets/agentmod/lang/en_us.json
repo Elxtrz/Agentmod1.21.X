@@ -27,10 +27,19 @@
   "itemgroup.agentmod.weapon_items" : "Weapon Items",
 
   "effect.agentmod.slimey": "Slimey",
+  "effect.agentmod.bleed": "Bleed",
 
   "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
   "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
   "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.slimey_potion": "Slimey Tipped Arrow",
+
+  "item.minecraft.potion.effect.bleed_potion": "Bleeding Potion",
+  "item.minecraft.splash_potion.effect.bleed_potion": "Bleeding Splash Potion",
+  "item.minecraft.lingering_potion.effect.bleed_potion": "Bleeding Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.bleed_potion": "Bleeding Tipped Arrow",
+
+  "particle.agentmod.bleed_particle": "Bleed Particle",
 
   "item.agentmod.super_cauliflower.tooltip" : "Super????"
 }

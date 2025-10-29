@@ -1,4 +1,5 @@
-// 1.21	2025-10-27T23:38:46.129126	agentmod/Recipes
+// 1.21	2025-10-28T22:22:07.5063682	agentmod/Recipes
+14ad8a1e2fe0fcb6f9299f73986912e4297b900a data\agentmod\advancement\recipes\misc\crack_wand.json
 44dbc699ece6715d390d1c6ff853835a81abd09b data\agentmod\advancement\recipes\decorations\pink_garnet_block.json
 518dcf049ef0be27cc07360b31857aed1c2d646b data\agentmod\advancement\recipes\misc\raw_pink_garnet.json
 d7ac94f6cc15e5e70b17306abb3be1cc9e7ec1fa data\agentmod\advancement\recipes\misc\raw_pink_garnet_from_magic_block.json
@@ -15,6 +16,7 @@ a0365ab109746a0fafa331806361f2bff989fed6 data\agentmod\advancement\recipes\misc\
 805cbb6eca1b3866f2abf84074517e9e17cef7e5 data\agentmod\advancement\recipes\tools\pink_garnet_shovel.json
 6753a5676c5e13e25410407dbae2538b2d713ffd data\agentmod\advancement\recipes\misc\pink_garnet_from_blasting_pink_garnet_deepslate_ore.json
 198b58f7a8fa450ee98e06158aab42b6f1b32079 data\agentmod\recipe\pink_garnet_from_smelting_raw_pink_garnet.json
+e21535b8a5fb4ee8b9b7775df61944b71efff498 data\agentmod\recipe\crack_wand.json
 3f0c5fbb21eb0f391cccca5c16902e7412e87aec data\agentmod\recipe\pink_garnet_from_smelting_pink_garnet_deepslate_ore.json
 2b5c5874d2388349c791f5c24151e284b2f267b5 data\agentmod\recipe\pink_garnet_pickaxe.json
 1a4b90d9ff3f01d7aa3a5db898b697c00e4d4e7e data\agentmod\advancement\recipes\tools\pink_garnet_sword.json
