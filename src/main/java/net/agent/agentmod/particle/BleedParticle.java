@@ -1,4 +1,4 @@
-package net.agent.agentmod.particles;
+package net.agent.agentmod.particle;
 
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;

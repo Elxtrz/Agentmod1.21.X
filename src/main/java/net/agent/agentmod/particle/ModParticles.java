@@ -1,4 +1,4 @@
-package net.agent.agentmod.particles;
+package net.agent.agentmod.particle;
 
 import net.agent.agentmod.Agentmod;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;

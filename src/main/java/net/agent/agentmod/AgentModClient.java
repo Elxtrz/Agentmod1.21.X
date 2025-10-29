@@ -1,7 +1,7 @@
 package net.agent.agentmod;
 
-import net.agent.agentmod.particles.BleedParticle;
-import net.agent.agentmod.particles.ModParticles;
+import net.agent.agentmod.particle.BleedParticle;
+import net.agent.agentmod.particle.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 

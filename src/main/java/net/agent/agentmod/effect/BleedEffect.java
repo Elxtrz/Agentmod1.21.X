@@ -1,6 +1,6 @@
 package net.agent.agentmod.effect;
 
-import net.agent.agentmod.particles.ModParticles;
+import net.agent.agentmod.particle.ModParticles;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
