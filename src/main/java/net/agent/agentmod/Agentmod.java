@@ -4,11 +4,13 @@ import net.agent.agentmod.block.ModBlocks;
 import net.agent.agentmod.effect.ModEffects;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
+import net.agent.agentmod.particle.BleedParticle;
 import net.agent.agentmod.particle.ModParticles;
 import net.agent.agentmod.potion.ModPotions;
 import net.agent.agentmod.util.HammerUsageEvent;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
@@ -56,7 +58,10 @@ public class Agentmod implements ModInitializer {
 		ModEffects.registerEffects();
 
 		ModPotions.registerPotions();
+
 		ModParticles.registerParticles();
+
+		ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);

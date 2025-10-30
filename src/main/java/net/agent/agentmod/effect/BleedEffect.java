@@ -18,11 +18,16 @@ public class BleedEffect extends StatusEffect {
 
         World world = entity.getWorld();
         if (!world.isClient()) {
-            ((ServerWorld) world).spawnParticles(ModParticles.BLEED_PARTICLE,
-                    entity.getX() + 0.5, entity.getY() + 1.0D, entity.getZ() + 0.5,
-                    10,
-                    0, 0, 0,
-                    1);
+            ServerWorld serverWorld = (ServerWorld) world;
+            long ticks = serverWorld.getTime();
+            final int period = 30;
+            if (ticks % period == 0) {
+                serverWorld.spawnParticles(ModParticles.BLEED_PARTICLE,
+                        entity.getX() + 0.5D, entity.getY() + 1.0D, entity.getZ() + 0.5D,
+                        4,
+                        0.0, 0.0, 0.0,
+                        0.8);
+            }
         }
 
         return super.applyUpdateEffect(entity, amplifier);
