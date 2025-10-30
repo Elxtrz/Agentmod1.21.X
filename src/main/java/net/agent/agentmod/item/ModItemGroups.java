@@ -48,6 +48,17 @@ public class ModItemGroups {
                     })
                     .build());
 
+    public static final ItemGroup POTION_ITEMS = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Agentmod.MOD_ID, "potion_items"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(Items.POTION))
+                    .displayName(Text.translatable("itemgroup.agentmod.potion_items"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(Items.POTION);
+                    })
+                    .build());
+
+
+
     public static final ItemGroup ENCHANTS = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Agentmod.MOD_ID, "enchant_items"),
             FabricItemGroup.builder().icon(() -> new ItemStack(Items.ENCHANTED_BOOK))
