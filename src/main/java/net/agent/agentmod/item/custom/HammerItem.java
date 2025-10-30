@@ -51,7 +51,12 @@ public class HammerItem extends MiningToolItem {
         LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
         lightning.refreshPositionAfterTeleport(target.getX(), target.getY(), target.getZ());
         world.spawnEntity(lightning);
-        target.damage(world.getDamageSources().lightningBolt(), 6.0F); // lightning damage
+
+        world.getServer().execute(() -> {
+            if (target.isAlive())
+                target.damage(world.getDamageSources().lightningBolt(), 6.0F);
+
+        });
     }
 
     private void giveRegen(ServerPlayerEntity player) {

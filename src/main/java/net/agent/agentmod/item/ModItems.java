@@ -4,6 +4,7 @@ import net.agent.agentmod.Agentmod;
 import net.agent.agentmod.item.custom.BreezeSword;
 import net.agent.agentmod.item.custom.HammerItem;
 import net.agent.agentmod.item.custom.CrackItem;
+import net.agent.agentmod.item.custom.ShockSword;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
@@ -64,6 +65,10 @@ public class ModItems {
 
     public static final Item BREEZE_SWORD = registerItem("breeze_sword",
             new BreezeSword(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 3, -2.4f))));
+
+    public static final Item SHOCK_SWORD = registerItem("shock_sword",
+            new ShockSword(ModToolMaterials.PINK_GARNET, new Item.Settings()
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 3, -2.4f))));
 
     private static Item registerItem(String name, Item item) {

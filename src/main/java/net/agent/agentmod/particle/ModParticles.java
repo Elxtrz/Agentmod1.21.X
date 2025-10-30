@@ -11,6 +11,9 @@ public class ModParticles {
     public static final SimpleParticleType BLEED_PARTICLE =
             registerParticle("bleed_particle", FabricParticleTypes.simple());
 
+    public static final SimpleParticleType LIGHTNING_PARTICLE =
+            registerParticle("lightning_particle", FabricParticleTypes.simple());
+
     private static SimpleParticleType registerParticle(String name, SimpleParticleType particleType) {
         return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Agentmod.MOD_ID, name), particleType);
     }

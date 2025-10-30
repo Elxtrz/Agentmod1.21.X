@@ -22,14 +22,10 @@ public class BreezeSword extends SwordItem {
         if (!world.isClient && world instanceof ServerWorld serverWorld) {
             System.out.println("[BreezeSword] postHit triggered");
 
-            // Launch both entities
-            launchEntity(attacker);
             launchEntity(target);
 
             // Spawn wind burst
             spawnWindBursts(serverWorld, attacker);
-        } else {
-            System.out.println("[BreezeSword] Running client side — skipping");
         }
 
         return super.postHit(stack, target, attacker);

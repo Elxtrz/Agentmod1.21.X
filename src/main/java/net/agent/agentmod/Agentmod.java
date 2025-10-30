@@ -5,6 +5,7 @@ import net.agent.agentmod.effect.ModEffects;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
 import net.agent.agentmod.particle.BleedParticle;
+import net.agent.agentmod.particle.LightningParticle;
 import net.agent.agentmod.particle.ModParticles;
 import net.agent.agentmod.potion.ModPotions;
 import net.agent.agentmod.util.HammerUsageEvent;
@@ -42,18 +43,18 @@ public class Agentmod implements ModInitializer {
 
 		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 
-		AttackEntityCallback.EVENT.register((playerEntity, world, hand, entity, entityHitResult) -> {
-			if((entity instanceof CowEntity || entity instanceof SheepEntity) && !world.isClient()){
-				if(playerEntity.getMainHandStack().getItem() == ModItems.CRACK_WAND){
-					playerEntity.getMainHandStack().damage(1, playerEntity, EquipmentSlot.MAINHAND);
-					playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1));
-					playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 100, 1));
-				}
-				return ActionResult.SUCCESS;
-			}
-
-			return ActionResult.FAIL;
-		});
+//		AttackEntityCallback.EVENT.register((playerEntity, world, hand, entity, entityHitResult) -> {
+//			if((entity instanceof CowEntity || entity instanceof SheepEntity) && !world.isClient()){
+//				if(playerEntity.getMainHandStack().getItem() == ModItems.CRACK_WAND){
+//					playerEntity.getMainHandStack().damage(1, playerEntity, EquipmentSlot.MAINHAND);
+//					playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1));
+//					playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 100, 1));
+//				}
+//				return ActionResult.SUCCESS;
+//			}
+//
+//			return ActionResult.FAIL;
+//		});
 
 		ModEffects.registerEffects();
 
@@ -62,6 +63,7 @@ public class Agentmod implements ModInitializer {
 		ModParticles.registerParticles();
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);

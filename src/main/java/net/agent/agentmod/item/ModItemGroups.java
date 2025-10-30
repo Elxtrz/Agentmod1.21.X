@@ -75,6 +75,7 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.PINK_GARNET_HAMMER);
                         entries.add(ModItems.BREEZE_SWORD);
+                        entries.add(ModItems.SHOCK_SWORD);
                     })
                     .build());
 

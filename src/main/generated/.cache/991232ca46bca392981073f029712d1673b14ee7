@@ -1,4 +1,4 @@
-// 1.21	2025-10-28T22:22:07.5071794	agentmod/Model Definitions
+// 1.21	2025-10-29T23:17:15.8647364	agentmod/Model Definitions
 60aeae9190e3a02423ee553386dfbc03d20a512a assets\agentmod\models\item\pink_garnet_deepslate_ore.json
 4c3407cc52f41536afb31001f7deb7a3c05801d9 assets\agentmod\models\item\pink_garnet_shovel.json
 8888716c4681380bb1e8384943e8dc5891047f51 assets\agentmod\models\block\raw_pink_garnet_block.json
@@ -12,6 +12,7 @@ e8572ee30659133abdd7e1b28c64e158dee866a1 assets\agentmod\models\item\pink_garnet
 d234e5f02b688caeea8ab29f6bed7d36d749480e assets\agentmod\models\item\raw_pink_garnet_block.json
 8ea9f5bcf8d7e8cd9dbc36ba7210bbff90717ead assets\agentmod\models\item\raw_pink_garnet.json
 6548279723578ed4050c477ed4447605f55e859f assets\agentmod\models\item\pink_garnet.json
+fec2bd6a7a30462648ac4e634341e99ce8077b77 assets\agentmod\models\item\shock_sword.json
 4f57325267f800e7f0993b025ca48f4646243db7 assets\agentmod\blockstates\pink_garnet_block.json
 7bde6a12ccf8db9290d9f3d87cad64252aaa8560 assets\agentmod\blockstates\pink_garnet_ore.json
 4bb8b4595d87f97104d5dca043dcd22a851adb51 assets\agentmod\models\item\pink_garnet_pickaxe.json

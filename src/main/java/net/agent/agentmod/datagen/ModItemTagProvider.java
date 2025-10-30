@@ -25,7 +25,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.APPLE);
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
-                .add(ModItems.PINK_GARNET_SWORD);
+                .add(ModItems.PINK_GARNET_SWORD)
+                .add(ModItems.BREEZE_SWORD)
+                .add(ModItems.SHOCK_SWORD);
+
         getOrCreateTagBuilder(ItemTags.PICKAXES)
                 .add(ModItems.PINK_GARNET_PICKAXE);
         getOrCreateTagBuilder(ItemTags.SHOVELS)

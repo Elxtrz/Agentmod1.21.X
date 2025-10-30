@@ -19,6 +19,7 @@
   "item.agentmod.pink_garnet_hoe": "Pink Garnet Hoe",
   "item.agentmod.pink_garnet_hammer": "Pink Garnet Hammer",
   "item.agentmod.breeze_sword": "§dBreeze§r Sword",
+  "item.agentmod.shock_sword": "§6§lSHOCK§r Sword",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",
@@ -28,6 +29,7 @@
 
   "effect.agentmod.slimey": "Slimey",
   "effect.agentmod.bleed": "Bleed",
+  "effect.agentmod.shocked": "Shocked",
 
   "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
   "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
@@ -40,6 +42,7 @@
   "item.minecraft.tipped_arrow.effect.bleed_potion": "Bleeding Tipped Arrow",
 
   "particle.agentmod.bleed_particle": "Bleed Particle",
+  "particle.agentmod.lightning_particle": "Lighting Particle",
 
   "item.agentmod.super_cauliflower.tooltip" : "Super????"
 }

@@ -39,6 +39,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PINK_GARNET_HOE, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.PINK_GARNET_HAMMER, Models.HANDHELD);
+
         itemModelGenerator.register(ModItems.BREEZE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SHOCK_SWORD, Models.HANDHELD);
     }
 }
