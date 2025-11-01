@@ -38,5 +38,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(ModItems.PINK_GARNET_HOE);
 
+        getOrCreateTagBuilder(ItemTags.ARROWS)
+                .add(ModItems.TNT_ARROW);
+
     }
 }

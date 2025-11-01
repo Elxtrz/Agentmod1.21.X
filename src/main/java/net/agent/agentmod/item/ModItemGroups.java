@@ -4,6 +4,7 @@ import net.agent.agentmod.Agentmod;
 import net.agent.agentmod.block.ModBlocks;
 import net.agent.agentmod.potion.ModPotions;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -53,7 +54,14 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(Items.POTION))
                     .displayName(Text.translatable("itemgroup.agentmod.potion_items"))
                     .entries((displayContext, entries) -> {
-                        entries.add(Items.POTION);
+                        entries.add(PotionContentsComponent.createStack(Items.POTION, ModPotions.SLIMEY_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.POTION, ModPotions.BLEED_POTION));
+
+                        entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, ModPotions.SLIMEY_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, ModPotions.BLEED_POTION));
+
+                        entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, ModPotions.SLIMEY_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, ModPotions.BLEED_POTION));
                     })
                     .build());
 
@@ -76,6 +84,8 @@ public class ModItemGroups {
                         entries.add(ModItems.PINK_GARNET_HAMMER);
                         entries.add(ModItems.BREEZE_SWORD);
                         entries.add(ModItems.SHOCK_SWORD);
+
+                        entries.add(ModItems.TNT_ARROW);
                     })
                     .build());
 

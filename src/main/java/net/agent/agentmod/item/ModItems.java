@@ -1,10 +1,7 @@
 package net.agent.agentmod.item;
 
 import net.agent.agentmod.Agentmod;
-import net.agent.agentmod.item.custom.BreezeSword;
-import net.agent.agentmod.item.custom.HammerItem;
-import net.agent.agentmod.item.custom.CrackItem;
-import net.agent.agentmod.item.custom.ShockSword;
+import net.agent.agentmod.item.custom.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
@@ -70,6 +67,9 @@ public class ModItems {
     public static final Item SHOCK_SWORD = registerItem("shock_sword",
             new ShockSword(ModToolMaterials.PINK_GARNET, new Item.Settings()
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 3, -2.4f))));
+
+    public static final Item TNT_ARROW = registerItem("tnt_arrow",
+            new TntArrow(new Item.Settings().maxCount(64)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name), item);

@@ -1,7 +1,8 @@
-// 1.21	2025-10-29T23:17:15.8647364	agentmod/Model Definitions
+// 1.21	2025-11-01T13:00:18.3373515	agentmod/Model Definitions
 60aeae9190e3a02423ee553386dfbc03d20a512a assets\agentmod\models\item\pink_garnet_deepslate_ore.json
 4c3407cc52f41536afb31001f7deb7a3c05801d9 assets\agentmod\models\item\pink_garnet_shovel.json
 8888716c4681380bb1e8384943e8dc5891047f51 assets\agentmod\models\block\raw_pink_garnet_block.json
+2e214601bbd569a32d82aa9e209c09bec5a307ff assets\agentmod\models\item\tnt_arrow.json
 8b19507cfcd8d1560de43d2fe94a3b632353c10a assets\agentmod\blockstates\pink_garnet_deepslate_ore.json
 94f2286c72aa5f6b8a59e0ba8afb0e5b941a808a assets\agentmod\models\item\magic_block.json
 4dce23ef8a5c05e20913b51053eba003e34d04ca assets\agentmod\models\block\pink_garnet_ore.json

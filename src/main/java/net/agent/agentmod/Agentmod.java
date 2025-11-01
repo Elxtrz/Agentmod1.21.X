@@ -2,6 +2,7 @@ package net.agent.agentmod;
 
 import net.agent.agentmod.block.ModBlocks;
 import net.agent.agentmod.effect.ModEffects;
+import net.agent.agentmod.entity.ModEntities;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
 import net.agent.agentmod.particle.BleedParticle;
@@ -12,18 +13,12 @@ import net.agent.agentmod.util.HammerUsageEvent;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.passive.CowEntity;
-import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
-import net.minecraft.util.ActionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,6 +56,8 @@ public class Agentmod implements ModInitializer {
 		ModPotions.registerPotions();
 
 		ModParticles.registerParticles();
+
+		ModEntities.registerModEntities();
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);

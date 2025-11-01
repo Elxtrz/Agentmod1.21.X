@@ -1,7 +1,8 @@
-// 1.21	2025-10-29T23:17:15.8647364	agentmod/Tags for minecraft:item
+// 1.21	2025-11-01T13:00:18.3383764	agentmod/Tags for minecraft:item
 ee02aa0e1651a06fed015128c11f4235535c22a7 data\minecraft\tags\item\shovels.json
 444a06116658e5b93ea0512b3f58bfad2b0defb9 data\minecraft\tags\item\axes.json
 b11d2fded6ad0e1588f5c68164a0624886dc25ef data\minecraft\tags\item\pickaxes.json
 9667615fc24590080398c385700eb500efea78df data\minecraft\tags\item\swords.json
+e9f77359e5d0bcb1743310eed149f69c4c9266ae data\minecraft\tags\item\arrows.json
 ff1e321f2468e28ccf8f55319223984f137bf2e4 data\minecraft\tags\item\hoes.json
 caf6dec8414fba2714a16996b24cdc896fa81244 data\agentmod\tags\item\transformable_items.json
