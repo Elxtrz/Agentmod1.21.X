@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
 
     public static final EntityType<TntArrowEntity> TNT_ARROW = Registry.register(Registries.ENTITY_TYPE,
-            Identifier.of(Agentmod.MOD_ID, "tomahawk"),
+            Identifier.of(Agentmod.MOD_ID, "tnt_arrow"),
             EntityType.Builder.<TntArrowEntity>create(TntArrowEntity::new, SpawnGroup.MISC)
                     .dimensions(0.5f, 0.5f).build());
 
