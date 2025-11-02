@@ -85,6 +85,8 @@ public class ModItemGroups {
                         entries.add(ModItems.BREEZE_SWORD);
                         entries.add(ModItems.SHOCK_SWORD);
 
+                        entries.add(ModItems.CHAINSAW_SWORD);
+
                         entries.add(ModItems.TNT_ARROW);
                     })
                     .build());

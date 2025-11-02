@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "agentmod:item/chainsaw_sword"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "scale": [1.5, 1.5, 1.5],
+      "translation": [0, 3, 1],
+      "rotation": [0, 60, 0]
+    },
+    "firstperson_righthand": {
+      "scale": [1.8, 1.8, 1.8],
+      "translation": [0, 4, 2],
+      "rotation": [0, 60, 0]
+    }
+  }
+}

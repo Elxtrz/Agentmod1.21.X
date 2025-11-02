@@ -57,7 +57,7 @@ public class Agentmod implements ModInitializer {
 
 		ModParticles.registerParticles();
 
-		ModEntities.registerModEntities();
+		//ModEntities.registerModEntities();
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);

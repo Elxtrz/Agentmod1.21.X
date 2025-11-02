@@ -71,6 +71,10 @@ public class ModItems {
     public static final Item TNT_ARROW = registerItem("tnt_arrow",
             new TntArrow(new Item.Settings().maxCount(64)));
 
+    public static final Item CHAINSAW_SWORD = registerItem("chainsaw_sword",
+            new ChainsawSword(ModToolMaterials.PINK_GARNET, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET, 3, -2.4f))));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name), item);
     }
