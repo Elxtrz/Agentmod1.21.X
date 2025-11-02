@@ -20,12 +20,13 @@ public class BreezeSword extends SwordItem {
         World world = attacker.getWorld();
 
         if (!world.isClient && world instanceof ServerWorld serverWorld) {
-            System.out.println("[BreezeSword] postHit triggered");
+            if(Math.random() < 0.15) {
+                System.out.println("[BreezeSword] postHit triggered");
 
-            launchEntity(target);
+                launchEntity(target);
 
-            // Spawn wind burst
-            spawnWindBursts(serverWorld, attacker);
+                spawnWindBursts(serverWorld, target, attacker);
+            }
         }
 
         return super.postHit(stack, target, attacker);
@@ -39,7 +40,7 @@ public class BreezeSword extends SwordItem {
         System.out.println("[BreezeSword] Launched entity: " + entity.getName().getString());
     }
 
-    private void spawnWindBursts(ServerWorld world, LivingEntity entity) {
+    private void spawnWindBursts(ServerWorld world, LivingEntity center, LivingEntity owner) {
         System.out.println("[BreezeSword] Spawning wind charges...");
         for (int i = 0; i < 8; i++) {
             double angle = Math.toRadians(i * 45);
@@ -47,9 +48,9 @@ public class BreezeSword extends SwordItem {
             double zDir = Math.sin(angle);
 
             WindChargeEntity wind = new WindChargeEntity(EntityType.WIND_CHARGE, world);
-            wind.refreshPositionAndAngles(entity.getX(), entity.getY() + 1.5, entity.getZ(), 0, 0);
+            wind.refreshPositionAndAngles(center.getX(), center.getY() + 1.5, center.getZ(), 0, 0);
             wind.setVelocity(xDir * 1.5, 0.1, zDir * 1.5);
-            wind.setOwner(entity);
+            wind.setOwner(owner);
 
             boolean success = world.spawnEntity(wind);
             System.out.println("[BreezeSword] Wind charge spawned: " + success);

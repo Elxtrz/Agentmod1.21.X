@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "agentmod:item/chainsaw_sword"
+    "layer0": "agentmod:item/shock_sword"
   },
   "display": {
     "thirdperson_righthand": {
