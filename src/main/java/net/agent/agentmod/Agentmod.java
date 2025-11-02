@@ -59,7 +59,7 @@ public class Agentmod implements ModInitializer {
 
 		ModParticles.registerParticles();
 
-		//ModEntities.registerModEntities();
+		ModEntities.registerModEntities();
 
 		ModEnchantmentEffects.registerEnchantmentEffects();
 

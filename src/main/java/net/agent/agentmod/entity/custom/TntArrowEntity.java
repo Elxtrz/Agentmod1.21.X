@@ -1,81 +1,64 @@
 package net.agent.agentmod.entity.custom;
 
-import net.agent.agentmod.entity.ModEntities;
-import net.agent.agentmod.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class TntArrowEntity extends ArrowEntity {
+public class TntArrowEntity extends PersistentProjectileEntity {
+    private static final int MAX_POTION_DURATION_TICKS = 600;
+    private static final int NO_POTION_COLOR = -1;
+    private static final byte PARTICLE_EFFECT_STATUS = 0;
 
-    private int fuse = 0;
-
-    public TntArrowEntity(EntityType<? extends ArrowEntity> entityType, World world) {
+    public TntArrowEntity(EntityType<? extends TntArrowEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public TntArrowEntity(World world, LivingEntity owner) {
-        super(ModEntities.TNT_ARROW, world);
-        this.setOwner(owner);
+    public TntArrowEntity(World world, double x, double y, double z, ItemStack stack, @Nullable ItemStack shotFrom) {
+        super(EntityType.ARROW, x, y, z, world, stack, shotFrom);
     }
 
-    public TntArrowEntity(World world, double x, double y, double z) {
-        super(ModEntities.TNT_ARROW, world);
-        this.updatePosition(x, y, z);
+    public TntArrowEntity(World world, LivingEntity owner, ItemStack stack, @Nullable ItemStack shotFrom) {
+        super(EntityType.ARROW, owner, world, stack, shotFrom);
     }
 
-
-
-    @Override
     public void tick() {
         super.tick();
-
-        if (this.getWorld().isClient && !this.inGround) {
-            this.getWorld().addParticle(ParticleTypes.SMALL_FLAME, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
+        if (this.getWorld().isClient) {
+            if (this.inGround) {
+                if (this.inGroundTime % 5 == 0) {
+                    this.spawnParticles(1);
+                }
+            } else {
+                this.spawnParticles(2);
+            }
         }
     }
 
-    @Override
-    protected void onEntityHit(EntityHitResult entityHitResult) {
-        super.onEntityHit(entityHitResult);
+    private void spawnParticles(int amount) {
+        this.getWorld().addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
+    }
 
-        if (!this.getWorld().isClient()) {
-            this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), 2.5F, World.ExplosionSourceType.TNT);
-            this.discard();
-        }
+    protected void onHit(LivingEntity target) {
+        super.onHit(target);
+        this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), 5.0f, World.ExplosionSourceType.MOB);
     }
 
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
-
-        if (!this.getWorld().isClient()) {
-            this.getWorld().createExplosion(this, blockHitResult.getPos().x, blockHitResult.getPos().y, blockHitResult.getPos().z, 4.0F, World.ExplosionSourceType.TNT);
-            this.discard();
-        }
+        this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), 5.0f, World.ExplosionSourceType.MOB);
+        this.discard();
     }
 
-    @Override
-    public ItemStack getItemStack() {
-        return new ItemStack(ModItems.TNT_ARROW);
-    }
+    //Change Item.ARROW on TNT_ARROW
 
-    @Override
-    public void readCustomDataFromNbt(NbtCompound nbt) {
-        super.readCustomDataFromNbt(nbt);
-        if (nbt.contains("Fuse")) this.fuse = nbt.getInt("Fuse");
-    }
-
-    @Override
-    public void writeCustomDataToNbt(NbtCompound nbt) {
-        super.writeCustomDataToNbt(nbt);
-        nbt.putInt("Fuse", this.fuse);
+    protected ItemStack getDefaultItemStack() {
+        return new ItemStack(Items.ARROW);
     }
 }

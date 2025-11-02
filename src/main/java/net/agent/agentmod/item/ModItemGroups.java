@@ -82,7 +82,7 @@ public class ModItemGroups {
 
                         entries.add(ModItems.CHAINSAW_SWORD);
 
-                        //entries.add(ModItems.TNT_ARROW);
+                        entries.add(ModItems.TNT_ARROW);
                     })
                     .build());
 
