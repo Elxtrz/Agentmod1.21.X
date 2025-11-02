@@ -25,9 +25,14 @@
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",
-  "itemgroup.agentmod.enchant_items" : "Enchant Items",
+  "itemgroup.agentmod.armor_items" : "Armor",
   "itemgroup.agentmod.potion_items" : "Potion Items",
   "itemgroup.agentmod.weapon_items" : "Weapon Items",
+
+  "item.agentmod.pink_garnet_helmet": "Pink Garnet Helmet",
+  "item.agentmod.pink_garnet_chestplate": "Pink Garnet Chestplate",
+  "item.agentmod.pink_garnet_leggings": "Pink Garnet Leggings",
+  "item.agentmod.pink_garnet_boots": "Pink Garnet Boots",
 
   "effect.agentmod.slimey": "Slimey",
   "effect.agentmod.bleed": "Bleed",

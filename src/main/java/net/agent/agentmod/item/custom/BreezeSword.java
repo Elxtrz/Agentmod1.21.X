@@ -29,7 +29,7 @@ public class BreezeSword extends SwordItem {
             }
         }
 
-        return super.postHit(stack, target, attacker);
+        return super.postHit(stack, attacker, attacker);
     }
 
     private void launchEntity(LivingEntity entity) {

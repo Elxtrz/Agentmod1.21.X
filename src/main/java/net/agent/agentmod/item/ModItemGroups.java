@@ -82,9 +82,24 @@ public class ModItemGroups {
 
                         entries.add(ModItems.CHAINSAW_SWORD);
 
-                        entries.add(ModItems.TNT_ARROW);
+                        //entries.add(ModItems.TNT_ARROW);
                     })
                     .build());
+
+    public static final ItemGroup ARMOR = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Agentmod.MOD_ID, "armor_items"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET_CHESTPLATE))
+                    .displayName(Text.translatable("itemgroup.agentmod.armor_items"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.PINK_GARNET_HELMET);
+                        entries.add(ModItems.PINK_GARNET_CHESTPLATE);
+                        entries.add(ModItems.PINK_GARNET_LEGGINGS);
+                        entries.add(ModItems.PINK_GARNET_BOOTS);
+
+
+                    })
+                    .build());
+
 
     public static void registerItemGroups() {
         Agentmod.LOGGER.info("Registering Mod Item Groups for " + Agentmod.MOD_ID);
