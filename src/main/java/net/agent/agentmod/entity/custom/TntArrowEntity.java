@@ -1,5 +1,6 @@
 package net.agent.agentmod.entity.custom;
 
+import net.agent.agentmod.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
@@ -56,9 +57,7 @@ public class TntArrowEntity extends PersistentProjectileEntity {
         this.discard();
     }
 
-    //Change Item.ARROW on TNT_ARROW
-
     protected ItemStack getDefaultItemStack() {
-        return new ItemStack(Items.ARROW);
+        return new ItemStack(ModItems.TNT_ARROW);
     }
 }
