@@ -48,5 +48,7 @@
 
   "item.agentmod.super_cauliflower.tooltip" : "Super????",
 
-  "entity.agentmod.tnt_arrow": "TNT Arrow"
+  "entity.agentmod.tnt_arrow": "TNT Arrow",
+
+  "enchantment.agentmod.lightning_striker": "§l§3Lightning Striker§r"
 }

@@ -2,16 +2,23 @@ package net.agent.agentmod.item;
 
 import net.agent.agentmod.Agentmod;
 import net.agent.agentmod.block.ModBlocks;
+import net.agent.agentmod.enchantment.ModEnchantments;
 import net.agent.agentmod.potion.ModPotions;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.component.type.PotionContentsComponent;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import static net.agent.agentmod.enchantment.ModEnchantmentEffects.LIGHTNING_STRIKER;
 
 public class ModItemGroups {
     public static final ItemGroup TUTORIAL_ITEMS = Registry.register(Registries.ITEM_GROUP,
@@ -55,24 +62,12 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.agentmod.potion_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(PotionContentsComponent.createStack(Items.POTION, ModPotions.SLIMEY_POTION));
-                        entries.add(PotionContentsComponent.createStack(Items.POTION, ModPotions.BLEED_POTION));
-
                         entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, ModPotions.SLIMEY_POTION));
-                        entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, ModPotions.BLEED_POTION));
-
                         entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, ModPotions.SLIMEY_POTION));
+
+                        entries.add(PotionContentsComponent.createStack(Items.POTION, ModPotions.BLEED_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, ModPotions.BLEED_POTION));
                         entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, ModPotions.BLEED_POTION));
-                    })
-                    .build());
-
-
-
-    public static final ItemGroup ENCHANTS = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(Agentmod.MOD_ID, "enchant_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(Items.ENCHANTED_BOOK))
-                    .displayName(Text.translatable("itemgroup.agentmod.enchant_items"))
-                    .entries((displayContext, entries) -> {
-                        entries.add(Items.ENCHANTED_BOOK);
                     })
                     .build());
 

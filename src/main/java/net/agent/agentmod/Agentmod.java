@@ -2,6 +2,8 @@ package net.agent.agentmod;
 
 import net.agent.agentmod.block.ModBlocks;
 import net.agent.agentmod.effect.ModEffects;
+import net.agent.agentmod.enchantment.ModEnchantmentEffects;
+import net.agent.agentmod.enchantment.ModEnchantments;
 import net.agent.agentmod.entity.ModEntities;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
@@ -58,6 +60,8 @@ public class Agentmod implements ModInitializer {
 		ModParticles.registerParticles();
 
 		//ModEntities.registerModEntities();
+
+		ModEnchantmentEffects.registerEnchantmentEffects();
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);

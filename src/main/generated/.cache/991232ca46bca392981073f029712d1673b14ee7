@@ -1,4 +1,4 @@
-// 1.21	2025-11-02T00:23:01.1104353	agentmod/Model Definitions
+// 1.21	2025-11-02T00:53:03.8678292	agentmod/Model Definitions
 4c3407cc52f41536afb31001f7deb7a3c05801d9 assets\agentmod\models\item\pink_garnet_shovel.json
 60aeae9190e3a02423ee553386dfbc03d20a512a assets\agentmod\models\item\pink_garnet_deepslate_ore.json
 2e214601bbd569a32d82aa9e209c09bec5a307ff assets\agentmod\models\item\tnt_arrow.json
@@ -14,8 +14,8 @@ d234e5f02b688caeea8ab29f6bed7d36d749480e assets\agentmod\models\item\raw_pink_ga
 8ea9f5bcf8d7e8cd9dbc36ba7210bbff90717ead assets\agentmod\models\item\raw_pink_garnet.json
 6548279723578ed4050c477ed4447605f55e859f assets\agentmod\models\item\pink_garnet.json
 4f57325267f800e7f0993b025ca48f4646243db7 assets\agentmod\blockstates\pink_garnet_block.json
-4bb8b4595d87f97104d5dca043dcd22a851adb51 assets\agentmod\models\item\pink_garnet_pickaxe.json
 7bde6a12ccf8db9290d9f3d87cad64252aaa8560 assets\agentmod\blockstates\pink_garnet_ore.json
+4bb8b4595d87f97104d5dca043dcd22a851adb51 assets\agentmod\models\item\pink_garnet_pickaxe.json
 a41ca623933f7b1529242500b3f190a29f46b856 assets\agentmod\blockstates\magic_block.json
 d74e4767421184efea0e01d29a45c369dd2fe07d assets\agentmod\models\item\pink_garnet_sword.json
 47d4fc88e69ea6a4f04720ca74ba221a2d34f185 assets\agentmod\blockstates\raw_pink_garnet_block.json
