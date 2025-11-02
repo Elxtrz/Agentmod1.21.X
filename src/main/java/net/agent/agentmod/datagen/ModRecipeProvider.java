@@ -27,8 +27,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         List<ItemConvertible> PINK_GARNET_SMELTABLES = List.of(ModItems.RAW_PINK_GARNET, ModBlocks.PINK_GARNET_ORE,
                 ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
 
-        offerSmelting(exporter, PINK_GARNET_SMELTABLES, RecipeCategory.MISC, ModItems.PINK_GARNET, 0.25f, 200, "pink_garnet");
-        offerBlasting(exporter, PINK_GARNET_SMELTABLES, RecipeCategory.MISC, ModItems.PINK_GARNET, 0.25f, 100, "pink_garnet");
+        // cant smelt raw pink garnet to pink garnet
+//        offerSmelting(exporter, PINK_GARNET_SMELTABLES, RecipeCategory.MISC, ModItems.PINK_GARNET, 0.25f, 200, "pink_garnet");
+//        offerBlasting(exporter, PINK_GARNET_SMELTABLES, RecipeCategory.MISC, ModItems.PINK_GARNET, 0.25f, 100, "pink_garnet");
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_GARNET, RecipeCategory.DECORATIONS, ModBlocks.PINK_GARNET_BLOCK);
 
@@ -50,7 +51,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.MAGIC_BLOCK), conditionsFromItem(ModBlocks.MAGIC_BLOCK))
                 .offerTo(exporter, Identifier.of(Agentmod.MOD_ID, "raw_pink_garnet_from_magic_block"));
 
-
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PINK_GARNET,1)
+                .pattern("PPP")
+                .pattern("PSP")
+                .pattern("PPP")
+                .input('P', ModItems.RAW_PINK_GARNET)
+                .input('S', Items.DIAMOND_BLOCK)
+                .criterion(hasItem(ModItems.RAW_PINK_GARNET), conditionsFromItem(Items.DIAMOND_BLOCK))
+                .offerTo(exporter, Identifier.of(Agentmod.MOD_ID, "pink_garnet_from_raw_pink_garnet_and_diamond_block"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.PINK_GARNET_PICKAXE)
                 .pattern("PPP")

@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "agentmod:pink_garnet_deepslate_ore"
+              "name": "agentmod:pink_garnet_nether_ore"
             },
             {
               "type": "minecraft:item",
@@ -35,8 +35,8 @@
                   "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "max": 2.0,
-                    "min": 1.0
+                    "max": 3.0,
+                    "min": 2.0
                   },
                   "function": "minecraft:set_count"
                 },

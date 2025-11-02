@@ -4,6 +4,8 @@
     "agentmod:raw_pink_garnet_block",
     "agentmod:pink_garnet_ore",
     "agentmod:pink_garnet_deepslate_ore",
+    "agentmod:pink_garnet_nether_ore",
+    "agentmod:pink_garnet_end_ore",
     "agentmod:magic_block"
   ]
 }

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "agentmod:raw_pink_garnet"
+            "items": "minecraft:diamond_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pink_garnet_from_smelting_raw_pink_garnet"
+        "recipe": "agentmod:pink_garnet_from_raw_pink_garnet_and_diamond_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pink_garnet_from_smelting_raw_pink_garnet"
+      "agentmod:pink_garnet_from_raw_pink_garnet_and_diamond_block"
     ]
   }
 }

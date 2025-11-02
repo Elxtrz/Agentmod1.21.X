@@ -1,2 +1,8 @@
-// 1.21	2025-11-02T15:20:50.7603043	agentmod/
+// 1.21	2025-11-02T17:42:47.8445642	agentmod/
+30ab295722417b96ee338439861082f28d8f6b15 data\agentmod\worldgen\configured_feature\nether_pink_garnet_ore.json
+2ccf396fc7931c220bb2a7d65ff39b12336a4f59 data\agentmod\worldgen\placed_feature\nether_pink_garnet_ore_placed.json
 1365b669dcfde5a5b0f9b47367c3a64ec10ae664 data\agentmod\enchantment\lightning_striker.json
+732dde9330bad50653d841117aaf9e18cc58adaf data\agentmod\worldgen\configured_feature\pink_garnet_ore.json
+39774b13ab9fbae191cee21a3b378125e642f462 data\agentmod\worldgen\placed_feature\end_pink_garnet_ore_placed.json
+a57afde47e29e7c1ea15f7ebc69e8f4ede9d61d9 data\agentmod\worldgen\configured_feature\end_pink_garnet_ore.json
+c390edeb2c8b423a777a0e84448b64b36cdbddaa data\agentmod\worldgen\placed_feature\pink_garnet_ore_placed.json

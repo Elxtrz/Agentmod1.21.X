@@ -12,6 +12,7 @@ import net.agent.agentmod.particle.LightningParticle;
 import net.agent.agentmod.particle.ModParticles;
 import net.agent.agentmod.potion.ModPotions;
 import net.agent.agentmod.util.HammerUsageEvent;
+import net.agent.agentmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
@@ -60,6 +61,8 @@ public class Agentmod implements ModInitializer {
 		ModParticles.registerParticles();
 
 		ModEntities.registerModEntities();
+
+		ModWorldGeneration.generateModWorldGen();
 
 		ModEnchantmentEffects.registerEnchantmentEffects();
 

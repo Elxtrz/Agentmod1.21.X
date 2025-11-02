@@ -11,6 +11,8 @@
   "block.agentmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
   "block.agentmod.pink_garnet_ore": "Pink Garnet Ore",
   "block.agentmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
+  "block.agentmod.pink_garnet_nether_ore": "Pink Garnet Nether Ore",
+  "block.agentmod.pink_garnet_end_ore": "Pink Garnet End Ore",
 
   "item.agentmod.pink_garnet_sword": "Pink Garnet Sword",
   "item.agentmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
