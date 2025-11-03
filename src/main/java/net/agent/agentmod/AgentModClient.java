@@ -2,6 +2,7 @@ package net.agent.agentmod;
 
 import net.agent.agentmod.entity.ModEntities;
 import net.agent.agentmod.entity.client.TntArrowEntityRender;
+import net.agent.agentmod.particle.BlackHoleParticle;
 import net.agent.agentmod.particle.BleedParticle;
 import net.agent.agentmod.particle.LightningParticle;
 import net.agent.agentmod.particle.ModParticles;
@@ -14,6 +15,7 @@ public class AgentModClient implements ClientModInitializer {
     public void onInitializeClient() {
         ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BLACKHOLE_PARTICLE, BlackHoleParticle.Factory::new);
 
         EntityRendererRegistry.register(ModEntities.TNT_ARROW, TntArrowEntityRender::new);
     }

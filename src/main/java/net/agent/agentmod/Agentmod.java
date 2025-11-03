@@ -3,10 +3,10 @@ package net.agent.agentmod;
 import net.agent.agentmod.block.ModBlocks;
 import net.agent.agentmod.effect.ModEffects;
 import net.agent.agentmod.enchantment.ModEnchantmentEffects;
-import net.agent.agentmod.enchantment.ModEnchantments;
 import net.agent.agentmod.entity.ModEntities;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
+import net.agent.agentmod.particle.BlackHoleParticle;
 import net.agent.agentmod.particle.BleedParticle;
 import net.agent.agentmod.particle.LightningParticle;
 import net.agent.agentmod.particle.ModParticles;
@@ -16,7 +16,6 @@ import net.agent.agentmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -68,6 +67,7 @@ public class Agentmod implements ModInitializer {
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.BLACKHOLE_PARTICLE, BlackHoleParticle.Factory::new);
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);

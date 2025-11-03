@@ -1,6 +1,8 @@
 package net.agent.agentmod.block;
 
 import net.agent.agentmod.Agentmod;
+import net.agent.agentmod.block.custom.BlackHoleBlock;
+import net.agent.agentmod.block.custom.LitBlackHoleBlock;
 import net.agent.agentmod.block.custom.MagicBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -19,6 +21,7 @@ public class ModBlocks {
 
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             new MagicBlock(AbstractBlock.Settings.create().strength(5f).requiresTool().sounds(BlockSoundGroup.GLASS)));
+
 
     public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
             new Block(AbstractBlock.Settings.create().strength(4f)
@@ -43,6 +46,15 @@ public class ModBlocks {
     public static final Block PINK_GARNET_NETHER_ORE = registerBlock("pink_garnet_nether_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(1, 5),
                     AbstractBlock.Settings.create().strength(3f).requiresTool()));
+
+    public static final Block BLACK_HOLE_BLOCK = registerBlock("black_hole_block",
+            new BlackHoleBlock(AbstractBlock.Settings.create().strength(5f).requiresTool().sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block LIT_BLACK_HOLE_BLOCK = registerBlock("lit_black_hole_block",
+            new LitBlackHoleBlock(AbstractBlock.Settings.create().strength(20f).requiresTool().sounds(BlockSoundGroup.GLASS)));
+
+
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

@@ -13,6 +13,7 @@
   "block.agentmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
   "block.agentmod.pink_garnet_nether_ore": "Pink Garnet Nether Ore",
   "block.agentmod.pink_garnet_end_ore": "Pink Garnet End Ore",
+  "block.agentmod.black_hole_block": "Black Hole Block",
 
   "item.agentmod.pink_garnet_sword": "Pink Garnet Sword",
   "item.agentmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
@@ -52,6 +53,7 @@
 
   "particle.agentmod.bleed_particle": "Bleed Particle",
   "particle.agentmod.lightning_particle": "Lighting Particle",
+  "particle.agentmod.blackhole_particle": "Black Hole Particle",
 
   "item.agentmod.super_cauliflower.tooltip" : "Super????",
 
