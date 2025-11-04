@@ -93,6 +93,12 @@ public class ModItems {
     public static final Item FLATTEN_WAND = registerItem("flatten_wand",
             new FlattenGroundItem(new Item.Settings().maxCount(1)));
 
+    public static final Item SPHERE_WAND = registerItem("sphere_wand",
+            new SphereWandItem(new Item.Settings().maxCount(1)));
+
+    public static final Item VOID_WAND = registerItem("void_wand",
+            new VoidWandItem(new Item.Settings().maxCount(1)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name), item);
     }
