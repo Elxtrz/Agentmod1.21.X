@@ -1,5 +1,6 @@
 package net.agent.agentmod.item.custom;
 
+import net.agent.agentmod.particle.ModParticles;
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
@@ -120,6 +121,14 @@ public class SphereWandItem extends Item {
         }
         ((ServerWorld) world).playSound(null, center, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
         player.sendMessage(Text.literal("Placed " + mode.name() + " " + (filled ? "FILLED" : "HOLLOW") + " with radius " + radius), true);
+
+        ServerWorld serverWorld = (ServerWorld) world;
+        serverWorld.spawnParticles(ModParticles.SPIN_PARTICLE,
+                context.getPlayer().getX() + 0.5D, context.getPlayer().getY() + 1.0D, context.getPlayer().getZ() + 0.5D,
+                4,
+                0.0, 0.0, 0.0,
+                0.8);
+
         return ActionResult.SUCCESS;
     }
 
