@@ -25,6 +25,7 @@
   "item.agentmod.shock_sword": "§6§lSHOCK§r Sword",
   "item.agentmod.tnt_arrow": "TNT arrow",
   "item.agentmod.chainsaw_sword": "§l§6C§eH§6A§eI§6N§eS§6A§eW §8S§4W§8O§4R§8D§r",
+  "item.agentmod.flatten_wand": "Flatten Wand",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",

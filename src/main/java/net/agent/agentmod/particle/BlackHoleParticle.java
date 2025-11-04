@@ -15,11 +15,11 @@ public class BlackHoleParticle extends SpriteBillboardParticle {
         this.maxAge = 40;
         this.setSpriteForAge(spriteProvider);
 
-        this.scale = 0.2f;
-        this.red = 0.1f;
-        this.green = 0.1f;
-        this.blue = 0.1f;
+        this.red = 1.0f;
+        this.green = 1.0f;
+        this.blue = 1.0f;
         this.alpha = 0.9f;
+        this.scale = 0.25f;
     }
 
     @Override
@@ -74,7 +74,7 @@ public class BlackHoleParticle extends SpriteBillboardParticle {
 
     @Override
     public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_LIT;
+        return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
     }
 
     // Factory to create instances of this particle
