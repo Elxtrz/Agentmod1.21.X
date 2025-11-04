@@ -8,9 +8,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LitBlackHoleBlock extends Block {
-    private static final int LIFETIME_TICKS = 100; // 5 seconds at 20 TPS
-    private static final int TICK_INTERVAL = 5;    // spawn particles every 5 ticks (0.25s)
+    private static final int LIFETIME_TICKS = 100; // 5 seconds @ 20 TPS
+    private static final int TICK_INTERVAL = 5;
+    private static final int PARTICLES_PER_TICK = 5;
+
+    // Simple runtime storage for tick tracking
+    private static final Map<BlockPos, Integer> AGE_MAP = new HashMap<>();
 
     public LitBlackHoleBlock(Settings settings) {
         super(settings);
@@ -19,34 +26,35 @@ public class LitBlackHoleBlock extends Block {
     @Override
     public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
         if (!world.isClient()) {
-            // Store creation time in block entity data or in memory if you have a block entity.
+            AGE_MAP.put(pos.toImmutable(), 0);
             world.scheduleBlockTick(pos, this, TICK_INTERVAL);
         }
     }
 
     @Override
+    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+        super.onStateReplaced(state, world, pos, newState, moved);
+        AGE_MAP.remove(pos.toImmutable());
+    }
+
+    @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        // Save the creation tick in block state tags or temp memory; here we’ll fake it using age map.
-        // Simplify: attach "age" to world property map per pos.
-        long currentTime = world.getTime();
-        long startTime = state.contains(net.minecraft.state.property.Properties.AGE_15)
-                ? state.get(net.minecraft.state.property.Properties.AGE_15)
-                : currentTime;
+        int age = AGE_MAP.getOrDefault(pos.toImmutable(), 0) + TICK_INTERVAL;
+        AGE_MAP.put(pos.toImmutable(), age);
 
-        int ticksExisted = (int) (currentTime - startTime);
-        double progress = Math.min(1.0, ticksExisted / (double) LIFETIME_TICKS);
+        // Spawn particles moving toward center
+        for (int i = 0; i < PARTICLES_PER_TICK; i++) {
+            double radius = 1.8;
+            double angle = 2 * Math.PI * random.nextDouble();
+            double height = random.nextDouble();
 
-        int particleCount = 2 + (int) (progress * 10); // fewer particles
-        double baseSpeed = 0.02 + progress * 0.3;      // smoother approach speed
+            double spawnX = pos.getX() + 0.5 + radius * Math.cos(angle);
+            double spawnY = pos.getY() + height;
+            double spawnZ = pos.getZ() + 0.5 + radius * Math.sin(angle);
 
-        for (int i = 0; i < particleCount; i++) {
-            double spawnX = pos.getX() + world.random.nextDouble();
-            double spawnY = pos.getY() + world.random.nextDouble();
-            double spawnZ = pos.getZ() + world.random.nextDouble();
-
-            double centerX = pos.getX() + 0.5D;
-            double centerY = pos.getY() + 0.5D;
-            double centerZ = pos.getZ() + 0.5D;
+            double centerX = pos.getX() + 0.5;
+            double centerY = pos.getY() + 0.5;
+            double centerZ = pos.getZ() + 0.5;
 
             double dirX = centerX - spawnX;
             double dirY = centerY - spawnY;
@@ -54,21 +62,24 @@ public class LitBlackHoleBlock extends Block {
             double dist = Math.sqrt(dirX * dirX + dirY * dirY + dirZ * dirZ);
             if (dist == 0) dist = 0.001;
 
-            double motionX = dirX / dist * baseSpeed;
-            double motionY = dirY / dist * baseSpeed;
-            double motionZ = dirZ / dist * baseSpeed;
+            double speed = 0.15;
+            double velX = dirX / dist * speed;
+            double velY = dirY / dist * speed;
+            double velZ = dirZ / dist * speed;
 
             world.spawnParticles(
                     ModParticles.BLACKHOLE_PARTICLE,
                     spawnX, spawnY, spawnZ,
                     1,
-                    motionX, motionY, motionZ,
+                    pos.getX() + 0.5,  // pass actual center X
+                    pos.getY() + 0.5,  // pass actual center Y
+                    pos.getZ() + 0.5,  // pass actual center Z
                     0.0
             );
+
         }
 
-        // Explosion after 5 seconds
-        if (ticksExisted >= LIFETIME_TICKS) {
+        if (age >= LIFETIME_TICKS) {
             world.createExplosion(
                     null,
                     pos.getX() + 0.5,
@@ -78,10 +89,9 @@ public class LitBlackHoleBlock extends Block {
                     World.ExplosionSourceType.TNT
             );
             world.removeBlock(pos, false);
-            return;
+            AGE_MAP.remove(pos.toImmutable());
+        } else {
+            world.scheduleBlockTick(pos, this, TICK_INTERVAL);
         }
-
-        // Schedule next tick slower (every 5 ticks)
-        world.scheduleBlockTick(pos, this, TICK_INTERVAL);
     }
 }

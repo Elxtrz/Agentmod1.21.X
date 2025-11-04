@@ -25,13 +25,6 @@ public class BlackHoleBlock extends Block {
     }
 
     @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        float f = 0.7f + (float) Math.random();
-        world.playSound(player, pos, SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.BLOCKS, 1.0f, f);
-        return ActionResult.SUCCESS;
-    }
-
-    @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
 
         if (entity instanceof ItemEntity itemEntity) {
