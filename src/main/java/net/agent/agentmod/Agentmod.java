@@ -6,10 +6,7 @@ import net.agent.agentmod.enchantment.ModEnchantmentEffects;
 import net.agent.agentmod.entity.ModEntities;
 import net.agent.agentmod.item.ModItemGroups;
 import net.agent.agentmod.item.ModItems;
-import net.agent.agentmod.particle.BlackHoleParticle;
-import net.agent.agentmod.particle.BleedParticle;
-import net.agent.agentmod.particle.LightningParticle;
-import net.agent.agentmod.particle.ModParticles;
+import net.agent.agentmod.particle.*;
 import net.agent.agentmod.potion.ModPotions;
 import net.agent.agentmod.util.HammerUsageEvent;
 import net.agent.agentmod.world.gen.ModWorldGeneration;
@@ -68,6 +65,7 @@ public class Agentmod implements ModInitializer {
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLACKHOLE_PARTICLE, BlackHoleParticle.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.SPIN_PARTICLE, SpinParticle.Factory::new);
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
