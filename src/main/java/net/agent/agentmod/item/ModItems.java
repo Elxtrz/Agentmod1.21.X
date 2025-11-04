@@ -99,6 +99,9 @@ public class ModItems {
     public static final Item VOID_WAND = registerItem("void_wand",
             new VoidWandItem(new Item.Settings().maxCount(1)));
 
+    public static final Item PYRAMID_WAND = registerItem("pyramid_wand",
+            new PyramidWandItem(new Item.Settings().maxCount(1)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name), item);
     }

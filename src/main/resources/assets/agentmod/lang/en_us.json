@@ -29,6 +29,7 @@
   "item.agentmod.flatten_wand": "Flatten Wand",
   "item.agentmod.sphere_wand": "Sphere Wand",
   "item.agentmod.void_wand": "Void Wand",
+  "item.agentmod.pyramid_wand": "Pyramid Wand",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",

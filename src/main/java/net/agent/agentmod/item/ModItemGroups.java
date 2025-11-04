@@ -58,6 +58,7 @@ public class ModItemGroups {
                         entries.add(ModItems.FLATTEN_WAND);
                         entries.add(ModItems.SPHERE_WAND);
                         entries.add(ModItems.VOID_WAND);
+                        entries.add(ModItems.PYRAMID_WAND);
                     })
                     .build());
 
