@@ -4,6 +4,7 @@ import net.agent.agentmod.Agentmod;
 import net.agent.agentmod.block.custom.BlackHoleBlock;
 import net.agent.agentmod.block.custom.LitBlackHoleBlock;
 import net.agent.agentmod.block.custom.MagicBlock;
+import net.agent.agentmod.block.custom.XBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -11,11 +12,16 @@ import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+
+import java.util.List;
 
 public class ModBlocks {
 
@@ -52,6 +58,15 @@ public class ModBlocks {
 
     public static final Block LIT_BLACK_HOLE_BLOCK = registerBlock("lit_black_hole_block",
             new LitBlackHoleBlock(AbstractBlock.Settings.create().strength(20f).requiresTool().sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block X_BLOCK = registerBlock("x_block",
+            new XBlock(AbstractBlock.Settings.create().strength(5f).requiresTool().sounds(BlockSoundGroup.GLASS)){
+                @Override
+                public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+                    tooltip.add(Text.translatable("block.agentmod.x_block.tooltip"));
+                    super.appendTooltip(stack, context, tooltip, type);
+                }
+            });
 
 
 

@@ -103,6 +103,13 @@ public class PyramidWandItem extends Item {
                 0.0, 0.0, 0.0,
                 0.8);
 
+        if (player instanceof net.minecraft.server.network.ServerPlayerEntity serverPlayer) {
+            double tpX = base.getX() + 0.5D;
+            double tpY = base.getY() + height;
+            double tpZ = base.getZ() + 0.5D;
+            serverPlayer.requestTeleport(tpX, tpY, tpZ);
+        }
+
         return ActionResult.SUCCESS;
     }
 

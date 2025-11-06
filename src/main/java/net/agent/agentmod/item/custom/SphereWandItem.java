@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -128,6 +129,14 @@ public class SphereWandItem extends Item {
                 4,
                 0.0, 0.0, 0.0,
                 0.8);
+
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            double tx = center.getX() + 0.5;
+            double ty = center.getY() + (mode == Mode.SPHERE ? radius + 1 : 1.5);
+            double tz = center.getZ() + 0.5;
+            serverPlayer.teleport((ServerWorld) world, tx, ty, tz, player.getYaw(), player.getPitch());
+            serverPlayer.sendMessage(Text.literal("Teleported to top of shape"), true);
+        }
 
         return ActionResult.SUCCESS;
     }

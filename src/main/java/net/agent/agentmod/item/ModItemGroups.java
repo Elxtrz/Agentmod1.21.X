@@ -91,6 +91,7 @@ public class ModItemGroups {
 //                        entries.add(ModItems.TNT_ARROW);
 
                         entries.add(ModBlocks.BLACK_HOLE_BLOCK);
+                        entries.add(ModBlocks.X_BLOCK);
                     })
                     .build());
 

@@ -14,6 +14,7 @@
   "block.agentmod.pink_garnet_nether_ore": "Pink Garnet Nether Ore",
   "block.agentmod.pink_garnet_end_ore": "Pink Garnet End Ore",
   "block.agentmod.black_hole_block": "Black Hole Block",
+  "block.agentmod.x_block": "X Block",
 
   "item.agentmod.pink_garnet_sword": "Pink Garnet Sword",
   "item.agentmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
@@ -61,6 +62,7 @@
   "particle.agentmod.blackhole_particle": "Black Hole Particle",
 
   "item.agentmod.super_cauliflower.tooltip" : "Super????",
+  "block.agentmod.x_block.tooltip" : "What happens if you drop TNT on this? ",
 
   "entity.agentmod.tnt_arrow": "TNT Arrow",
 
