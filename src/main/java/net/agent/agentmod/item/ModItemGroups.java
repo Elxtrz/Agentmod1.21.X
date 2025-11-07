@@ -55,10 +55,14 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.agentmod.world_edit_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.CRACK_WAND);
+
                         entries.add(ModItems.FLATTEN_WAND);
                         entries.add(ModItems.SPHERE_WAND);
-                        entries.add(ModItems.VOID_WAND);
                         entries.add(ModItems.PYRAMID_WAND);
+
+                        entries.add(ModItems.VOID_WAND);
+
+                        entries.add(ModItems.TNT_WAND);
                     })
                     .build());
 
