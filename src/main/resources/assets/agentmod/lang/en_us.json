@@ -32,6 +32,7 @@
   "item.agentmod.void_wand": "Void Wand",
   "item.agentmod.pyramid_wand": "Pyramid Wand",
   "item.agentmod.tnt_wand": "Tnt Wand",
+  "item.agentmod.xray_wand": "X ray Wand",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",

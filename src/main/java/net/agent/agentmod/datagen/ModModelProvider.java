@@ -59,5 +59,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SPHERE_WAND, Models.GENERATED);
         itemModelGenerator.register(ModItems.VOID_WAND, Models.GENERATED);
         itemModelGenerator.register(ModItems.PYRAMID_WAND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.XRAY_WAND, Models.GENERATED);
     }
 }

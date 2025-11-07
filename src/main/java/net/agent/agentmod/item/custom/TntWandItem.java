@@ -56,11 +56,6 @@ public class TntWandItem extends Item {
     }
 
     @Override
-    public boolean onClicked(ItemStack stack, ItemStack otherStack, Slot slot, ClickType clickType, PlayerEntity player, StackReference cursorStackReference) {
-        return super.onClicked(stack, otherStack, slot, clickType, player, cursorStackReference);
-    }
-
-    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
@@ -106,7 +101,7 @@ public class TntWandItem extends Item {
 
             serverWorld.spawnEntity(tnt);
         }
-        
+
         serverWorld.playSound(
                 null,
                 user.getBlockPos(),
@@ -146,7 +141,7 @@ public class TntWandItem extends Item {
         user.sendMessage(Text.literal("Count set to " + radius), true);
 
         updateItemName(stack);
-        ((ServerWorld) world).playSound(null, user.getBlockPos(), SoundEvents.UI_BUTTON_CLICK.value(), SoundCategory.PLAYERS, 0.8f, 1.0f);
+        ((ServerWorld) world).playSound(null, user.getBlockPos(), SoundEvents.BLOCK_COBWEB_BREAK, SoundCategory.PLAYERS, 0.8f, 1.0f);
 
         return ActionResult.SUCCESS;
     }

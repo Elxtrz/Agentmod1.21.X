@@ -63,6 +63,7 @@ public class ModItemGroups {
                         entries.add(ModItems.VOID_WAND);
 
                         entries.add(ModItems.TNT_WAND);
+                        entries.add(ModItems.XRAY_WAND);
                     })
                     .build());
 
