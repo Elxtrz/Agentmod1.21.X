@@ -108,6 +108,9 @@ public class ModItems {
     public static final Item XRAY_WAND = registerItem("xray_wand",
             new XrayWandItem(new Item.Settings().maxCount(1)));
 
+    public static final Item ENTITY_WAND = registerItem("entity_wand",
+            new EntityWandItem(new Item.Settings().maxCount(1)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name), item);
     }

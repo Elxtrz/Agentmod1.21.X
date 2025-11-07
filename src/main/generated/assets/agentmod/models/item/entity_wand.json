@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "agentmod:item/sphere_wand"
+    "layer0": "agentmod:item/entity_wand"
   }
 }

@@ -55,10 +55,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PINK_GARNET_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PINK_GARNET_BOOTS));
 
-        itemModelGenerator.register(ModItems.FLATTEN_WAND, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SPHERE_WAND, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VOID_WAND, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PYRAMID_WAND, Models.GENERATED);
-        itemModelGenerator.register(ModItems.XRAY_WAND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLATTEN_WAND, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SPHERE_WAND, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VOID_WAND, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PYRAMID_WAND, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.XRAY_WAND, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ENTITY_WAND, Models.HANDHELD);
     }
 }

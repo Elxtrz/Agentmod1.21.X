@@ -64,6 +64,7 @@ public class ModItemGroups {
 
                         entries.add(ModItems.TNT_WAND);
                         entries.add(ModItems.XRAY_WAND);
+                        entries.add(ModItems.ENTITY_WAND);
                     })
                     .build());
 
