@@ -49,6 +49,7 @@
   "effect.agentmod.slimey": "Slimey",
   "effect.agentmod.bleed": "Bleed",
   "effect.agentmod.shocked": "Shocked",
+  "effect.agentmod.grounded": "Grounded",
 
   "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
   "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
@@ -63,6 +64,7 @@
   "particle.agentmod.bleed_particle": "Bleed Particle",
   "particle.agentmod.lightning_particle": "Lighting Particle",
   "particle.agentmod.blackhole_particle": "Black Hole Particle",
+  "particle.agentmod.gravity_particle": "Gravity Particle",
 
   "item.agentmod.super_cauliflower.tooltip" : "Super????",
   "block.agentmod.x_block.tooltip" : "What happens if you drop TNT on this? ",

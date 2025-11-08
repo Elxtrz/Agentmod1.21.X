@@ -66,6 +66,7 @@ public class Agentmod implements ModInitializer {
 		ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.BLACKHOLE_PARTICLE, BlackHoleParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.SPIN_PARTICLE, SpinParticle.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.GRAVITY_PARTICLE, GravityParticle.Factory::new);
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);

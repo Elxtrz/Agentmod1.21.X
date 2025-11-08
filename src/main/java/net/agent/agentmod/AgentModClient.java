@@ -14,6 +14,7 @@ public class AgentModClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHTNING_PARTICLE, LightningParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.BLACKHOLE_PARTICLE, BlackHoleParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.SPIN_PARTICLE, SpinParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.GRAVITY_PARTICLE, GravityParticle.Factory::new);
 
         EntityRendererRegistry.register(ModEntities.TNT_ARROW, TntArrowEntityRender::new);
     }

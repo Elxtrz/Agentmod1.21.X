@@ -20,6 +20,9 @@ public class ModParticles {
     public static final SimpleParticleType SPIN_PARTICLE =
             registerParticle("spin_particle", FabricParticleTypes.simple());
 
+    public static final SimpleParticleType GRAVITY_PARTICLE =
+            registerParticle("gravity_particle", FabricParticleTypes.simple());
+
     private static SimpleParticleType registerParticle(String name, SimpleParticleType particleType) {
         return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Agentmod.MOD_ID, name), particleType);
     }

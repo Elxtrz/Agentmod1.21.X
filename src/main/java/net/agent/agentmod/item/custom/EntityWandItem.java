@@ -94,7 +94,6 @@ public class EntityWandItem extends Item {
             if (nonLivingOnly && e instanceof LivingEntity) continue;
 
             Vec3d dir = target.subtract(e.getPos());
-            double len = Math.max(0.0001, dir.length());
             Vec3d pull = dir.normalize().multiply(strength);
             e.setVelocity(e.getVelocity().add(pull));
             e.velocityModified = true;
