@@ -98,6 +98,7 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.BLACK_HOLE_BLOCK);
                         entries.add(ModBlocks.X_BLOCK);
+                        entries.add(ModBlocks.UPPER_4_BLOCK);
                     })
                     .build());
 

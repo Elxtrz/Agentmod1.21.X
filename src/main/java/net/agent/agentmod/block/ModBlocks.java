@@ -1,10 +1,7 @@
 package net.agent.agentmod.block;
 
 import net.agent.agentmod.Agentmod;
-import net.agent.agentmod.block.custom.BlackHoleBlock;
-import net.agent.agentmod.block.custom.LitBlackHoleBlock;
-import net.agent.agentmod.block.custom.MagicBlock;
-import net.agent.agentmod.block.custom.XBlock;
+import net.agent.agentmod.block.custom.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -67,7 +64,8 @@ public class ModBlocks {
                 }
             });
 
-
+    public static final Block UPPER_4_BLOCK = registerBlock("upper_4_block",
+            new Upper4Block(AbstractBlock.Settings.create().strength(20f).requiresTool().sounds(BlockSoundGroup.GLASS)));
 
 
     private static Block registerBlock(String name, Block block) {
