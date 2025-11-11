@@ -28,6 +28,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIT_BLACK_HOLE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.X_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UPPER_4_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BRIT_BLOCK);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK);
     }
@@ -42,6 +43,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SUPER_CAULIFLOWER, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRACK_WAND, Models.GENERATED);
         itemModelGenerator.register(ModItems.STARLIGHT_ASHES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TEA, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.PINK_GARNET_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PINK_GARNET_PICKAXE, Models.HANDHELD);

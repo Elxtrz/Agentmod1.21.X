@@ -16,6 +16,7 @@
   "block.agentmod.black_hole_block": "Black Hole Block",
   "block.agentmod.x_block": "X Block",
   "block.agentmod.upper_4_block": "Upper Moon 4?? IN A BLOCK??",
+  "block.agentmod.brit_block": "The British are coming...",
 
   "item.agentmod.pink_garnet_sword": "Pink Garnet Sword",
   "item.agentmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
@@ -35,12 +36,14 @@
   "item.agentmod.tnt_wand": "Tnt Wand",
   "item.agentmod.xray_wand": "Xray Wand",
   "item.agentmod.entity_wand": "Entity Wand",
+  "item.agentmod.tea_item": "Cup of Tea",
 
   "itemgroup.agentmod.tutorial_items": "Tutorial Items",
   "itemgroup.agentmod.world_edit_items": "World Edit Items",
   "itemgroup.agentmod.armor_items" : "Armor",
   "itemgroup.agentmod.potion_items" : "Potion Items",
   "itemgroup.agentmod.weapon_items" : "Weapon Items",
+  "itemgroup.agentmod.random_blocks" : "Random Blocks",
 
   "item.agentmod.pink_garnet_helmet": "Pink Garnet Helmet",
   "item.agentmod.pink_garnet_chestplate": "Pink Garnet Chestplate",
@@ -69,6 +72,7 @@
 
   "item.agentmod.super_cauliflower.tooltip" : "Super????",
   "block.agentmod.x_block.tooltip" : "What happens if you drop TNT on this? ",
+  "block.agentmod.brit_block.tooltip" : "They did like money, and Tea...",
 
   "entity.agentmod.tnt_arrow": "TNT Arrow",
 

@@ -56,7 +56,7 @@ public class ModBlocks {
             new LitBlackHoleBlock(AbstractBlock.Settings.create().strength(20f).requiresTool().sounds(BlockSoundGroup.GLASS)));
 
     public static final Block X_BLOCK = registerBlock("x_block",
-            new XBlock(AbstractBlock.Settings.create().strength(5f).requiresTool().sounds(BlockSoundGroup.GLASS)){
+            new XBlock(AbstractBlock.Settings.create().strength(5f).requiresTool().sounds(BlockSoundGroup.GLASS)) {
                 @Override
                 public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
                     tooltip.add(Text.translatable("block.agentmod.x_block.tooltip"));
@@ -67,6 +67,15 @@ public class ModBlocks {
     public static final Block UPPER_4_BLOCK = registerBlock("upper_4_block",
             new Upper4Block(AbstractBlock.Settings.create().strength(20f).requiresTool().sounds(BlockSoundGroup.GLASS)));
 
+    public static final Block BRIT_BLOCK = registerBlock("brit_block",
+            new BritBlock(AbstractBlock.Settings.create().strength(3f).requiresTool().sounds(BlockSoundGroup.VAULT)) {
+                @Override
+                public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+                    tooltip.add(Text.translatable("block.agentmod.brit_block.tooltip"));
+                    super.appendTooltip(stack, context, tooltip, type);
+                }
+            });
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -74,11 +83,11 @@ public class ModBlocks {
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID , name),
+        Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
     }
 
-    public static void registerModBlocks(){
+    public static void registerModBlocks() {
         Agentmod.LOGGER.info("Registering ModBlocks for " + Agentmod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {

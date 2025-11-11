@@ -102,6 +102,16 @@ public class ModItemGroups {
                     })
                     .build());
 
+    public static final ItemGroup RANDOM_BLOCKS = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Agentmod.MOD_ID, "random_blocks"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.BRIT_BLOCK))
+                    .displayName(Text.translatable("itemgroup.agentmod.random_blocks"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.BRIT_BLOCK);
+                        entries.add(ModItems.TEA);
+                    })
+                    .build());
+
     public static final ItemGroup ARMOR = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Agentmod.MOD_ID, "armor_items"),
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET_CHESTPLATE))
