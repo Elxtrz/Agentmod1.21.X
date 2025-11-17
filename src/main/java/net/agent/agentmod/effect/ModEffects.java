@@ -35,6 +35,9 @@ public class ModEffects {
                             Identifier.of(Agentmod.MOD_ID, "grounded"), -0.15f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
+    public static final RegistryEntry<StatusEffect> REDSTONE_STRUCK = registerStatusEffect("redstone_struck",
+            new RedstoneStruck(StatusEffectCategory.NEUTRAL, 0x8A0303));
+
 
     private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Agentmod.MOD_ID, name), statusEffect);

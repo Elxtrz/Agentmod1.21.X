@@ -157,7 +157,7 @@ public class BritBlock extends Block {
         }
 
         ItemStack paperStack = new ItemStack(Items.PAPER, 32);
-        String rainbowName = "§l§cN§6O §eT§aA§bX§dA§cT§6I§eO§aN §bW§dI§cT§6H§eO§aU§bT §dR§cE§6P§eR§aE§bS§dE§cN§6T§eA§aT§bI§dO§cN";
+        String rainbowName = "§c§lN§6§lO §e§lT§a§lA§b§lX§d§lA§c§lT§6§lI§e§lO§a§lN §b§lW§d§lI§c§lT§6§lH§e§lO§a§lU§b§lT §d§lR§c§lE§6§lP§e§lR§a§lE§b§lS§d§lE§c§lN§6§lT§e§lA§a§lT§b§lI§d§lO§c§lN";
         paperStack.set(DataComponentTypes.CUSTOM_NAME, Text.literal(rainbowName));
         drops.add(paperStack);
 

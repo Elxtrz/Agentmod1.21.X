@@ -26,6 +26,9 @@ public class ModParticles {
     public static final SimpleParticleType FLAG_PARTICLE =
             registerParticle("flag_particle", FabricParticleTypes.simple());
 
+    public static final SimpleParticleType REDSTONE_STRUCK_PARTICLE =
+            registerParticle("redstone_struck_particle", FabricParticleTypes.simple());
+
     private static SimpleParticleType registerParticle(String name, SimpleParticleType particleType) {
         return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Agentmod.MOD_ID, name), particleType);
     }
