@@ -73,6 +73,7 @@ public class Agentmod implements ModInitializer {
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
 			builder.registerPotionRecipe(Potions.AWKWARD, ModItems.CRACK_WAND, ModPotions.BLEED_POTION);
+			builder.registerPotionRecipe(Potions.AWKWARD, Items.REDSTONE_BLOCK, ModPotions.REDSTONE_STRUCK);
 		});
 	}
 }

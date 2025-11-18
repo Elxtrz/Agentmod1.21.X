@@ -13,6 +13,9 @@ public class RedStoneStruckParticle extends SpriteBillboardParticle {
         this.velocityMultiplier = 0.8f;
 
         this.maxAge = 40;
+
+        this.scale *= 2F;
+
         this.setSpriteForAge(spriteProvider);
 
         this.red = 1f;

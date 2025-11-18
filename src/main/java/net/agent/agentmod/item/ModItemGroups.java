@@ -80,6 +80,10 @@ public class ModItemGroups {
                         entries.add(PotionContentsComponent.createStack(Items.POTION, ModPotions.BLEED_POTION));
                         entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, ModPotions.BLEED_POTION));
                         entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, ModPotions.BLEED_POTION));
+
+                        entries.add(PotionContentsComponent.createStack(Items.POTION, ModPotions.REDSTONE_STRUCK));
+                        entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, ModPotions.REDSTONE_STRUCK));
+                        entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, ModPotions.REDSTONE_STRUCK));
                     })
                     .build());
 
@@ -94,21 +98,27 @@ public class ModItemGroups {
 
                         entries.add(ModItems.CHAINSAW_SWORD);
 
-//                        entries.add(ModItems.TNT_ARROW);
-
                         entries.add(ModBlocks.BLACK_HOLE_BLOCK);
                         entries.add(ModBlocks.X_BLOCK);
                         entries.add(ModBlocks.UPPER_4_BLOCK);
+
+                        entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW, ModPotions.REDSTONE_STRUCK));
+                        entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW, ModPotions.BLEED_POTION));
+                        entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW, ModPotions.SLIMEY_POTION));
                     })
                     .build());
 
     public static final ItemGroup RANDOM_BLOCKS = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(Agentmod.MOD_ID, "random_blocks"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.BRIT_BLOCK))
-                    .displayName(Text.translatable("itemgroup.agentmod.random_blocks"))
+            Identifier.of(Agentmod.MOD_ID, "random_stuff"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.TEA))
+                    .displayName(Text.translatable("itemgroup.agentmod.random_stuff"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.BRIT_BLOCK);
                         entries.add(ModItems.TEA);
+
+                        entries.add(ModBlocks.MOB_JAIL_BLOCK_LEVEL_1);
+                        entries.add(ModBlocks.MOB_JAIL_BLOCK_LEVEL_2);
+                        entries.add(ModBlocks.MOB_JAIL_BLOCK_LEVEL_3);
                     })
                     .build());
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "agentmod:block/mob_jail_block_level_1"
+  }
+}

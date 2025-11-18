@@ -67,6 +67,7 @@ public class ModBlocks {
     public static final Block UPPER_4_BLOCK = registerBlock("upper_4_block",
             new Upper4Block(AbstractBlock.Settings.create().strength(20f).requiresTool().sounds(BlockSoundGroup.GLASS)));
 
+
     public static final Block BRIT_BLOCK = registerBlock("brit_block",
             new BritBlock(AbstractBlock.Settings.create().strength(3f).requiresTool().sounds(BlockSoundGroup.VAULT)) {
                 @Override
@@ -76,6 +77,14 @@ public class ModBlocks {
                 }
             });
 
+    public static final Block MOB_JAIL_BLOCK_LEVEL_1 = registerBlock("mob_jail_block_level_1",
+            new MobJailBlockLevel1(AbstractBlock.Settings.create().strength(20f).requiresTool()));
+
+    public static final Block MOB_JAIL_BLOCK_LEVEL_2 = registerBlock("mob_jail_block_level_2",
+            new MobJailBlockLevel2(AbstractBlock.Settings.create().strength(20f).requiresTool()));
+
+    public static final Block MOB_JAIL_BLOCK_LEVEL_3 = registerBlock("mob_jail_block_level_3",
+            new MobJailBlockLevel3(AbstractBlock.Settings.create().strength(20f).requiresTool()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

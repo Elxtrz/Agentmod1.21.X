@@ -1,6 +1,5 @@
 package net.agent.agentmod.block.custom;
 
-import net.agent.agentmod.item.ModItems;
 import net.agent.agentmod.util.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

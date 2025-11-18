@@ -30,6 +30,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UPPER_4_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BRIT_BLOCK);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MOB_JAIL_BLOCK_LEVEL_1);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MOB_JAIL_BLOCK_LEVEL_2);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MOB_JAIL_BLOCK_LEVEL_3);
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK);
     }
 
