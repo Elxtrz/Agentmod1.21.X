@@ -34,7 +34,6 @@ public class EntityWandItem extends Item {
         super(settings);
     }
 
-    // ===== Strength =====
     private float getStrength(ItemStack stack) {
         NbtComponent comp = stack.get(DataComponentTypes.CUSTOM_DATA);
         if (comp == null) return 2.5f;
@@ -49,7 +48,6 @@ public class EntityWandItem extends Item {
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(tag));
     }
 
-    // ===== Mode (All / Non-living only) =====
     private boolean isNonLivingOnly(ItemStack stack) {
         NbtComponent comp = stack.get(DataComponentTypes.CUSTOM_DATA);
         if (comp == null) return false;
@@ -64,14 +62,12 @@ public class EntityWandItem extends Item {
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(tag));
     }
 
-    // ===== Update Name =====
     private void updateItemName(ItemStack stack) {
         String mode = isNonLivingOnly(stack) ? "Non-living" : "All";
         String name = "Entity Wand (S:" + String.format("%.1f", getStrength(stack)) + ", M:" + mode + ")";
         stack.set(DataComponentTypes.CUSTOM_NAME, Text.literal(name));
     }
 
-    // ===== Move Entities (Single Pull to Target) =====
     private void applyPull(World world, PlayerEntity user, ItemStack stack) {
         if (!(world instanceof ServerWorld serverWorld)) return;
 
@@ -100,7 +96,6 @@ public class EntityWandItem extends Item {
         }
     }
 
-    // ===== Use in Air =====
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
@@ -120,7 +115,6 @@ public class EntityWandItem extends Item {
         return TypedActionResult.pass(stack);
     }
 
-    // ===== Use on Block (Adjust Strength) =====
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
@@ -132,18 +126,17 @@ public class EntityWandItem extends Item {
         ItemStack stack = context.getStack();
         float strength = getStrength(stack);
 
-        if (player.isSneaking()) {
+        if (player.isSneaking())
             setStrength(stack, strength - 0.1f);
-        } else {
+        else
             setStrength(stack, strength + 0.1f);
-        }
+
 
         updateItemName(stack);
         player.sendMessage(Text.literal("Strength: " + String.format("%.1f", getStrength(stack))), true);
         return ActionResult.SUCCESS;
     }
 
-    // ===== Tooltip =====
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.literal("§dRight-click: Pull entities toward target point§r"));

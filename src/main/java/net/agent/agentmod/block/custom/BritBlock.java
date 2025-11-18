@@ -28,7 +28,6 @@ public class BritBlock extends Block {
     public static final IntProperty GOLD_COUNT = IntProperty.of("gold_count", 0, 128);
 
     public BritBlock(Settings settings) {
-        // Brightness dynamically scales with gold count
         super(settings.luminance(state -> Math.min(state.get(GOLD_COUNT) / 10, 12)));
         this.setDefaultState(this.stateManager.getDefaultState().with(GOLD_COUNT, 0));
     }

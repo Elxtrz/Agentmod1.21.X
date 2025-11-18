@@ -86,6 +86,9 @@ public class ModBlocks {
     public static final Block MOB_JAIL_BLOCK_LEVEL_3 = registerBlock("mob_jail_block_level_3",
             new MobJailBlockLevel3(AbstractBlock.Settings.create().strength(20f).requiresTool()));
 
+    public static final Block BULLS_EYE_BLOCK = registerBlock("bulls_eye_block",
+            new BullsEyeBlock(AbstractBlock.Settings.create().strength(4f).requiresTool()));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Agentmod.MOD_ID, name), block);

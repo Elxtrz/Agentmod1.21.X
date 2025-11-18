@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "agentmod:block/bulls_eye_block"
+    }
+  }
+}

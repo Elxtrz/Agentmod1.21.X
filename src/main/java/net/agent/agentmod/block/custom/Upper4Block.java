@@ -23,7 +23,6 @@ public class Upper4Block extends Block {
     private static final int PLAYER_SPAWN_INTERVAL = 20 * 7;  // 7 seconds
     private static final int EFFECT_INTERVAL = 20 * 30;       // 30 seconds
 
-    // Independent timers
     private int mobSpawnTimer = 0;
     private int playerSpawnTimer = 0;
     private int effectTimer = 0;
@@ -36,10 +35,9 @@ public class Upper4Block extends Block {
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if (world.isClient()) return;
 
-        // Start cave spider spawn loop when any non-spider living entity steps on
-        if (entity instanceof LivingEntity living && !(living instanceof SpiderEntity)) {
+        if (entity instanceof LivingEntity living && !(living instanceof SpiderEntity))
             world.scheduleBlockTick(pos, this, MOB_SPAWN_INTERVAL);
-        }
+
 
         super.onSteppedOn(world, pos, state, entity);
     }
@@ -61,12 +59,10 @@ public class Upper4Block extends Block {
                 p -> p.squaredDistanceTo(centerX, centerY, centerZ) <= 25.0);
         boolean playerNearby = !nearbyPlayers.isEmpty();
 
-        // --- Update timers independently ---
         mobSpawnTimer += MOB_SPAWN_INTERVAL;
         playerSpawnTimer += MOB_SPAWN_INTERVAL;
         effectTimer += MOB_SPAWN_INTERVAL;
 
-        // --- Handle cave spider spawning (for standing mobs) ---
         if (hasStandingEntity && mobSpawnTimer >= MOB_SPAWN_INTERVAL) {
             CaveSpiderEntity caveSpider = EntityType.CAVE_SPIDER.create(world);
             if (caveSpider != null) {
@@ -76,7 +72,6 @@ public class Upper4Block extends Block {
             mobSpawnTimer = 0;
         }
 
-        // --- Handle normal spider spawning + effects (for nearby players) ---
         if (playerNearby) {
             if (playerSpawnTimer >= PLAYER_SPAWN_INTERVAL) {
                 SpiderEntity spider = EntityType.SPIDER.create(world);
@@ -96,7 +91,6 @@ public class Upper4Block extends Block {
             }
         }
 
-        // --- Reschedule ---
         if (hasStandingEntity || playerNearby)
             world.scheduleBlockTick(pos, this, MOB_SPAWN_INTERVAL);
     }
