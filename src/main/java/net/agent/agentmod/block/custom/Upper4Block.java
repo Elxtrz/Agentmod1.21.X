@@ -19,9 +19,9 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class Upper4Block extends Block {
-    private static final int MOB_SPAWN_INTERVAL = 20 * 5;     // 5 seconds
-    private static final int PLAYER_SPAWN_INTERVAL = 20 * 7;  // 7 seconds
-    private static final int EFFECT_INTERVAL = 20 * 30;       // 30 seconds
+    private static final int MOB_SPAWN_INTERVAL = 20 * 3;     // 3 seconds
+    private static final int PLAYER_SPAWN_INTERVAL = 20 * 5;  // 5 seconds
+    private static final int EFFECT_INTERVAL = 20 * 15;       // 15 seconds
 
     private int mobSpawnTimer = 0;
     private int playerSpawnTimer = 0;

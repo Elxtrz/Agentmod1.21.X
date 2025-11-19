@@ -121,6 +121,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MOB_JAIL_BLOCK_LEVEL_3);
 
                         entries.add(ModBlocks.BULLS_EYE_BLOCK);
+
+                        entries.add(ModBlocks.SUPER_SPAWNER_BLOCK);
                     })
                     .build());
 

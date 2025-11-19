@@ -89,6 +89,9 @@ public class ModBlocks {
     public static final Block BULLS_EYE_BLOCK = registerBlock("bulls_eye_block",
             new BullsEyeBlock(AbstractBlock.Settings.create().strength(4f).requiresTool()));
 
+    public static final Block SUPER_SPAWNER_BLOCK = registerBlock("super_spawner_block",
+            new SuperSpawnerBlock(AbstractBlock.Settings.create().strength(8f).requiresTool()));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Agentmod.MOD_ID, name), block);

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "agentmod:block/super_spawner_block"
+    }
+  }
+}

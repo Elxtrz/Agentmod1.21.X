@@ -35,6 +35,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MOB_JAIL_BLOCK_LEVEL_3);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BULLS_EYE_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SUPER_SPAWNER_BLOCK);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK);
     }
