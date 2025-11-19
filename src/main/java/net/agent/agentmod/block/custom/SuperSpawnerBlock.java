@@ -117,7 +117,6 @@ public class SuperSpawnerBlock extends Block {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 6, 1));
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 3, 1));
             player.addStatusEffect(new StatusEffectInstance(ModEffects.BLEED, 20 * 5, 1));
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 20 * 5, 3));
         }
 
         super.onBlockBreakStart(state, world, pos, player);
