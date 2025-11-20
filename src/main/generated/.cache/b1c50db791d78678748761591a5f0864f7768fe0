@@ -1,4 +1,4 @@
-// 1.21	2025-11-19T18:52:31.9499708	agentmod/Recipes
+// 1.21	2025-11-20T00:25:13.4069238	agentmod/Recipes
 14ad8a1e2fe0fcb6f9299f73986912e4297b900a data\agentmod\advancement\recipes\misc\crack_wand.json
 44dbc699ece6715d390d1c6ff853835a81abd09b data\agentmod\advancement\recipes\decorations\pink_garnet_block.json
 518dcf049ef0be27cc07360b31857aed1c2d646b data\agentmod\advancement\recipes\misc\raw_pink_garnet.json
@@ -20,6 +20,8 @@ e21535b8a5fb4ee8b9b7775df61944b71efff498 data\agentmod\recipe\crack_wand.json
 638c9d024df67ed8041109f3113695a051f8416f data\agentmod\advancement\recipes\tools\pink_garnet_axe.json
 d0f850cea884c8dd394e179d4b401bd3a5b0aa47 data\agentmod\advancement\recipes\tools\pink_garnet_hoe.json
 b202736e1f950da183fe7cf765e69818b0f5596f data\agentmod\recipe\pink_garnet.json
+11639a3d5d594a003fbbe0e4a73f9dfcd82e48a3 data\agentmod\recipe\starlight_ashes.json
 6da3da5bae71049284b9d5723f6a16eaabef41e8 data\agentmod\advancement\recipes\misc\pink_garnet_from_raw_pink_garnet_and_diamond_block.json
+a59a30b47221318c01531bcbaa85478fea13dad1 data\agentmod\advancement\recipes\misc\starlight_ashes.json
 c76caed15307bad0bf8a32fa07591cbaac8cb5df data\agentmod\recipe\pink_garnet_from_raw_pink_garnet_and_diamond_block.json
 1a8fb5adc2973423aef13ac6d841c9fbaf89bfc8 data\agentmod\advancement\recipes\building_blocks\pink_garnet.json

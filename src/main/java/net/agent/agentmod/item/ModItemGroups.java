@@ -95,12 +95,8 @@ public class ModItemGroups {
                         entries.add(ModItems.PINK_GARNET_HAMMER);
                         entries.add(ModItems.BREEZE_SWORD);
                         entries.add(ModItems.SHOCK_SWORD);
-
                         entries.add(ModItems.CHAINSAW_SWORD);
 
-                        entries.add(ModBlocks.BLACK_HOLE_BLOCK);
-                        entries.add(ModBlocks.X_BLOCK);
-                        entries.add(ModBlocks.UPPER_4_BLOCK);
 
                         entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW, ModPotions.REDSTONE_STRUCK));
                         entries.add(PotionContentsComponent.createStack(Items.TIPPED_ARROW, ModPotions.BLEED_POTION));
@@ -124,6 +120,11 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.SUPER_SPAWNER_BLOCK);
                         entries.add(ModBlocks.WITCH_CURSE_BLOCK);
+                        entries.add(ModBlocks.X_BLOCK);
+                        entries.add(ModBlocks.UPPER_4_BLOCK);
+                        entries.add(ModBlocks.BLACK_HOLE_BLOCK);
+
+                        entries.add(ModItems.WITCH_CONDUIT);
                     })
                     .build());
 

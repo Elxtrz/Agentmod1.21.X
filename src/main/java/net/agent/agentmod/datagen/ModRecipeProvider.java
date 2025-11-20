@@ -111,5 +111,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Items.NETHERITE_INGOT)
                 .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(Items.NETHERITE_INGOT))
                 .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.STARLIGHT_ASHES, 4)
+                .input(Items.BLAZE_ROD,8)
+                .input(Items.BREEZE_ROD,2)
+                .input(Items.END_ROD,1)
+                .input(Items.FIRE_CHARGE,4)
+                .criterion(hasItem(Items.BLAZE_ROD), conditionsFromItem(Items.BLAZE_ROD))
+                .offerTo(exporter);
     }
 }

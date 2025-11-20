@@ -114,6 +114,9 @@ public class ModItems {
     public static final Item TEA = registerItem("tea_item",
             new Item(new Item.Settings()));
 
+    public static final Item WITCH_CONDUIT = registerItem("witch_conduit",
+            new WitchConduitItem(new Item.Settings().maxCount(1)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Agentmod.MOD_ID, name), item);
     }

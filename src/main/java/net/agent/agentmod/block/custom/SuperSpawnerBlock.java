@@ -114,7 +114,6 @@ public class SuperSpawnerBlock extends Block {
                 }
             }
 
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 6, 1));
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 3, 1));
             player.addStatusEffect(new StatusEffectInstance(ModEffects.BLEED, 20 * 5, 1));
         }
@@ -133,7 +132,7 @@ public class SuperSpawnerBlock extends Block {
             ExperienceOrbEntity.spawn(sw, new Vec3d(cx, cy, cz), 30 * 7);
 
             for (EntityType<?> type : VALID_MOBS) {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 3; i++) { // 3 of each type (nerf from 10 bec 10 too hard to kill)
                     Entity e = type.create(sw);
                     if (e != null) {
                         e.refreshPositionAndAngles(cx, cy, cz, 0f, 0f);
