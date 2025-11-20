@@ -92,6 +92,9 @@ public class ModBlocks {
     public static final Block SUPER_SPAWNER_BLOCK = registerBlock("super_spawner_block",
             new SuperSpawnerBlock(AbstractBlock.Settings.create().strength(8f).requiresTool()));
 
+    public static final Block WITCH_CURSE_BLOCK = registerBlock("witch_curse_block",
+            new WitchCurseBlock(AbstractBlock.Settings.create().strength(2f).requiresTool()));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Agentmod.MOD_ID, name), block);

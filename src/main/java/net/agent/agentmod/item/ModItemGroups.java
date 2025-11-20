@@ -123,6 +123,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BULLS_EYE_BLOCK);
 
                         entries.add(ModBlocks.SUPER_SPAWNER_BLOCK);
+                        entries.add(ModBlocks.WITCH_CURSE_BLOCK);
                     })
                     .build());
 
