@@ -120,6 +120,7 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.SUPER_SPAWNER_BLOCK);
                         entries.add(ModBlocks.WITCH_CURSE_BLOCK);
+                        entries.add(ModBlocks.ANTI_DESTRUCTION_BLOCK);
                         entries.add(ModBlocks.X_BLOCK);
                         entries.add(ModBlocks.UPPER_4_BLOCK);
                         entries.add(ModBlocks.BLACK_HOLE_BLOCK);

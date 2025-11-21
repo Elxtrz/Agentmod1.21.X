@@ -23,6 +23,7 @@
 
   "block.agentmod.bulls_eye_block": "Bull's Eye Block",
   "block.agentmod.witch_curse_block": "Witch Curse Block",
+  "block.agentmod.anti_destruction_block": "Anti-Destruction Block",
 
   "item.agentmod.pink_garnet_sword": "Pink Garnet Sword",
   "item.agentmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
@@ -54,8 +55,7 @@
   "itemgroup.agentmod.armor_items": "Armor",
   "itemgroup.agentmod.potion_items": "Potion Items",
   "itemgroup.agentmod.weapon_items": "Weapon Items",
-  "itemgroup.agentmod.random_stuff": "Random Stuff",
-
+  "itemgroup.agentmod.random_stuff": "Trap Blocks + Random Stuff",
 
   "effect.agentmod.slimey": "Slimey",
   "effect.agentmod.bleed": "Bleed",

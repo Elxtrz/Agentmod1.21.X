@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "agentmod:block/anti_destruction_block_top",
+    "down": "agentmod:block/anti_destruction_block",
+    "north": "agentmod:block/anti_destruction_block",
+    "south": "agentmod:block/anti_destruction_block",
+    "east": "agentmod:block/anti_destruction_block",
+    "west": "agentmod:block/anti_destruction_block"
+  }
+}
