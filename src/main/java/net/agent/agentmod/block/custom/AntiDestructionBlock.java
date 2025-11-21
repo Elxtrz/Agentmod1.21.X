@@ -80,7 +80,7 @@ public class AntiDestructionBlock extends Block {
                     e.discard();
                 }
             }
-            
+
             int minX = center.getX() - RANGE;
             int minY = Math.max(world.getBottomY(), center.getY() - RANGE);
             int minZ = center.getZ() - RANGE;

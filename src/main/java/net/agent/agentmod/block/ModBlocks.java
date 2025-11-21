@@ -98,6 +98,9 @@ public class ModBlocks {
     public static final Block ANTI_DESTRUCTION_BLOCK = registerBlock("anti_destruction_block",
             new AntiDestructionBlock(AbstractBlock.Settings.create().strength(-1.0f, 3600000.0f)));
 
+    public static final Block PEDESTAL = registerBlock("pedestal",
+            new PedestalBlock(AbstractBlock.Settings.create().nonOpaque()));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Agentmod.MOD_ID, name), block);
