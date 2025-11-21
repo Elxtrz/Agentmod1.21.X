@@ -57,13 +57,11 @@ public class CurseOfTheWitchEffect extends StatusEffect {
         double minY = targetY - 2;
         double maxY = targetY + 2;
 
-        // === PHASE CONTROL ===
-
         // 0–3 seconds: rise to target height
         if (t - startTime < 60) {
             if (player.getY() < targetY) {
                 player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.LEVITATION, 5, 0, true, false, false
+                        StatusEffects.LEVITATION, 3, 0, true, false, false
                 ));
             }
         }
@@ -80,12 +78,12 @@ public class CurseOfTheWitchEffect extends StatusEffect {
             if (player.getY() < minY) {
                 // nudge upward
                 player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.LEVITATION, 5, 0, true, false, false
+                        StatusEffects.LEVITATION, 1, 0, true, false, false
                 ));
             } else if (player.getY() > maxY) {
                 // nudge downward
                 player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.SLOW_FALLING, 5, 0, true, false, false
+                        StatusEffects.SLOW_FALLING, 2, 0, true, false, false
                 ));
             } else {
                 // inside hover band: stop vertical drift
@@ -98,18 +96,18 @@ public class CurseOfTheWitchEffect extends StatusEffect {
             cleanup(player);
         }
 
-        // Particle spawning
-        if (!world.isClient()) {
-            ServerWorld sw = (ServerWorld) world;
-            if (t % 30 == 0) {
-                sw.spawnParticles(ModParticles.BLEED_PARTICLE,
-                        player.getX(), player.getY() + 1, player.getZ(),
+        if(!world.isClient()) {
+            ServerWorld serverWorld = (ServerWorld) world;
+            long ticks = serverWorld.getTime();
+            final int period = 30;
+            if (ticks % period == 0) {
+                serverWorld.spawnParticles(ModParticles.WITCH_PARTICLE,
+                        entity.getX() + 0.5D, entity.getY() + 1.0D, entity.getZ() + 0.5D,
                         4,
-                        0, 0, 0,
+                        0.0, 0.0, 0.0,
                         0.8);
             }
         }
-
         return true;
     }
 

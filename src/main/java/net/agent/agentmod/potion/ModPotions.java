@@ -15,7 +15,7 @@ public class ModPotions {
             new Potion(new StatusEffectInstance(ModEffects.SLIMEY, 1200, 0)));
 
     public static final RegistryEntry<Potion> BLEED_POTION = registerPotion("bleed_potion",
-            new Potion(new StatusEffectInstance(ModEffects.BLEED, 140, 0)));
+            new Potion(new StatusEffectInstance(ModEffects.BLEED, 20*15, 0)));
 
     public static final RegistryEntry<Potion> REDSTONE_STRUCK = registerPotion("redstone_struck",
             new Potion(new StatusEffectInstance(ModEffects.REDSTONE_STRUCK, 20*120, 0)));

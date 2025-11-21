@@ -7,9 +7,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
@@ -32,54 +30,49 @@ public class WitchConduitItem extends Item {
     }
 
     @Override
-    public boolean onClicked(ItemStack stack, ItemStack otherStack, Slot slot, ClickType clickType, PlayerEntity player, StackReference cursorStackReference) {
-        if (otherStack.isEmpty())
-            return super.onClicked(stack, otherStack, slot, clickType, player, cursorStackReference);
+    public boolean onClicked(ItemStack conduit, ItemStack otherStack, Slot slot, ClickType clickType, PlayerEntity player, StackReference cursorStackReference) {
+
+        if (otherStack.isEmpty()) return false;
 
         if (otherStack.isOf(ModItems.STARLIGHT_ASHES)) {
-            int amount = otherStack.getCount();
-            int stored = getAshes(stack);
-
-            int total = stored + amount;
-            int fullUses = total / ASHES_PER_USE;
-            int remainder = total % ASHES_PER_USE;
-
-            setAshes(stack, remainder);
-
-            if (fullUses > 0) {
-                int uses = getUses(stack) + fullUses;
-
-                if (uses >= MAX_USES) {
-                    uses = MAX_USES;
-                    stack.decrement(1);
-                }
-
-                setUses(stack, uses);
-            }
-
-            otherStack.decrement(amount);
-            return true;
+            return handleAshes(conduit, otherStack);
         }
 
         if (isPotionItem(otherStack)) {
-            int potionCount = otherStack.getCount();
 
-            boolean upgraded = increasePotionLevel(otherStack, slot);
+            if (getUses(conduit) <= 0) return false;
+
+            // Reject max-level potions
+            if (hasMaxLevelEffect(otherStack)) return false;
+
+            boolean upgraded = upgradePotion(otherStack);
             if (!upgraded) return false;
 
-            int addedUses = (potionCount + 31) / 32;
-            int uses = getUses(stack) + addedUses;
+            int uses = getUses(conduit) - ((otherStack.getCount() + 31) / 32);
+            if (uses < 0) uses = 0;
 
-            if (uses >= MAX_USES) {
-                uses = MAX_USES;
-                stack.decrement(1);
-            }
-
-            setUses(stack, uses);
+            setUses(conduit, uses);
             return true;
         }
 
-        return super.onClicked(stack, otherStack, slot, clickType, player, cursorStackReference);
+        return false;
+    }
+
+    private boolean handleAshes(ItemStack conduit, ItemStack ashesStack) {
+        int uses = getUses(conduit);
+        if (uses >= MAX_USES) return false;
+
+        int ashCount = ashesStack.getCount();
+        int possibleUses = ashCount / ASHES_PER_USE;
+        if (possibleUses <= 0) return false;
+
+        int space = MAX_USES - uses;
+        int used = Math.min(space, possibleUses);
+
+        ashesStack.decrement(used * ASHES_PER_USE);
+        setUses(conduit, uses + used);
+
+        return true;
     }
 
     private boolean isPotionItem(ItemStack stack) {
@@ -89,67 +82,74 @@ public class WitchConduitItem extends Item {
                 || stack.isOf(Items.TIPPED_ARROW);
     }
 
-    private boolean increasePotionLevel(ItemStack stack, Slot slot) {
+    // Rejects any potion that already has a level 3 effect
+    private boolean hasMaxLevelEffect(ItemStack stack) {
         PotionContentsComponent contents = stack.get(DataComponentTypes.POTION_CONTENTS);
         if (contents == null) return false;
 
-        Iterable<StatusEffectInstance> iterableEffects = contents.getEffects();
-        if (iterableEffects == null) return false;
+        for (StatusEffectInstance effect : contents.getEffects()) {
+            if (effect.getAmplifier() >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-        List<StatusEffectInstance> effects = new ArrayList<>();
-        for (StatusEffectInstance e : iterableEffects) effects.add(e);
-        if (effects.isEmpty()) return false;
+    private boolean upgradePotion(ItemStack stack) {
+        PotionContentsComponent contents = stack.get(DataComponentTypes.POTION_CONTENTS);
+        if (contents == null) return false;
 
-        boolean upgradedAny = false;
-        ArrayList<StatusEffectInstance> newEffects = new ArrayList<>();
+        List<StatusEffectInstance> newEffects = new ArrayList<>();
+        boolean upgraded = false;
 
-        for (StatusEffectInstance effect : effects) {
+        for (StatusEffectInstance effect : contents.getEffects()) {
 
-            // Effects that cannot upgrade
             if (effect.getEffectType() == StatusEffects.SLOW_FALLING ||
                     effect.getEffectType() == ModEffects.SLIMEY ||
-                    effect.getEffectType() == StatusEffects.WEAVING
-            ) {
+                    effect.getEffectType() == StatusEffects.WEAVING) {
+
                 newEffects.add(effect);
                 continue;
             }
 
             int amp = effect.getAmplifier();
 
-            if (amp < 2) {
-                upgradedAny = true;
-                newEffects.add(new StatusEffectInstance(
-                        effect.getEffectType(),
-                        effect.getDuration(),
-                        amp + 1,
-                        effect.isAmbient(),
-                        effect.shouldShowParticles(),
-                        effect.shouldShowIcon()
-                ));
-            } else {
-                newEffects.add(effect);
-            }
+            if (amp >= 2)
+                return false;
+
+
+            upgraded = true;
+
+            newEffects.add(new StatusEffectInstance(
+                    effect.getEffectType(),
+                    effect.getDuration(),
+                    amp + 1,
+                    effect.isAmbient(),
+                    effect.shouldShowParticles(),
+                    effect.shouldShowIcon()
+            ));
         }
 
-        if (!upgradedAny) return false;
+        if (!upgraded) return false;
 
-        // Create new potion contents
+        // Force overwrite instead of stacking
         PotionContentsComponent newContents = new PotionContentsComponent(
                 contents.potion(),
                 contents.customColor(),
                 newEffects
         );
 
-        ItemStack newStack = new ItemStack(stack.getItem(), stack.getCount());
-        newStack.set(DataComponentTypes.POTION_CONTENTS, newContents);
-
-        slot.setStack(newStack);
+        stack.set(DataComponentTypes.POTION_CONTENTS, newContents);
         return true;
     }
 
     private int getUses(ItemStack stack) {
         NbtComponent comp = stack.get(DataComponentTypes.CUSTOM_DATA);
-        NbtCompound nbt = comp != null ? comp.copyNbt() : new NbtCompound();
+        if (comp == null) return MAX_USES;
+
+        NbtCompound nbt = comp.copyNbt();
+        if (!nbt.contains("WitchConduitUses")) return MAX_USES;
+
         return nbt.getInt("WitchConduitUses");
     }
 
@@ -159,24 +159,9 @@ public class WitchConduitItem extends Item {
         nbt.putInt("WitchConduitUses", uses);
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
     }
-
-    private int getAshes(ItemStack stack) {
-        NbtComponent comp = stack.get(DataComponentTypes.CUSTOM_DATA);
-        NbtCompound nbt = comp != null ? comp.copyNbt() : new NbtCompound();
-        return nbt.getInt("WitchConduitAshes");
-    }
-
-    private void setAshes(ItemStack stack, int amount) {
-        NbtComponent comp = stack.get(DataComponentTypes.CUSTOM_DATA);
-        NbtCompound nbt = comp != null ? comp.copyNbt() : new NbtCompound();
-        nbt.putInt("WitchConduitAshes", amount);
-        stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
-    }
-
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.literal("§d§lUses: " + getUses(stack) + " / " + MAX_USES + "§r"));
-        tooltip.add(Text.literal("§6§lStored Ashes: " + getAshes(stack) + " / " + ASHES_PER_USE + "§r"));
         super.appendTooltip(stack, context, tooltip, type);
     }
 }
