@@ -1,11 +1,15 @@
 package net.agent.agentmod;
 
+import net.agent.agentmod.block.entity.ModBlockEntities;
+import net.agent.agentmod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.agent.agentmod.entity.ModEntities;
 import net.agent.agentmod.entity.client.TntArrowEntityRender;
 import net.agent.agentmod.particle.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 
 public class AgentModClient implements ClientModInitializer {
     @Override
@@ -20,5 +24,7 @@ public class AgentModClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(ModParticles.WITCH_PARTICLE, WitchParticle.Factory::new);
 
         EntityRendererRegistry.register(ModEntities.TNT_ARROW, TntArrowEntityRender::new);
+
+        BlockEntityRendererFactories.register(ModBlockEntities.PEDESTAL_BE, PedestalBlockEntityRenderer::new);
     }
 }
